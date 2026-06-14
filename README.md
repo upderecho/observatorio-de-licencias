@@ -1,5 +1,7 @@
 # UP-Law-AILO
 
+[![CI](https://github.com/gubaros/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/gubaros/observatorio-de-licencias/actions/workflows/ci.yml)
+
 **Observatorio simple de licencias de proveedores de IA.**
 
 UP-Law-AILO permite cargar manualmente el texto de una licencia, EULA, términos de
@@ -126,6 +128,18 @@ npm start
 ```bash
 npm test
 ```
+
+## Integración continua (CI)
+
+GitHub Actions corre en cada push y pull request a `main`
+(`.github/workflows/ci.yml`). El pipeline, sobre Node 22 (`.nvmrc`):
+
+1. `npm ci` — instala dependencias de forma reproducible.
+2. `npm run validate:data` — valida todos los JSON de `data/licenses` contra el schema.
+3. `npm test` — corre la suite de Vitest.
+4. `npm run build` — compila la app de Next.js.
+
+Si cualquier paso falla, la corrida queda en rojo.
 
 ---
 

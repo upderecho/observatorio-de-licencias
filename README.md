@@ -1,6 +1,6 @@
 # UP-Law-AILO
 
-[![CI](https://github.com/gubaros/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/gubaros/observatorio-de-licencias/actions/workflows/ci.yml)
+[![CI](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml)
 
 **Observatorio simple de licencias de proveedores de IA.**
 

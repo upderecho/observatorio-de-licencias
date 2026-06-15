@@ -19,7 +19,7 @@
 
 import type { LicenseAnalysis, CategoryFinding, Evidence } from "@/lib/schema";
 import { providerKey } from "@/lib/derive";
-import { computeCorpusSignature, type CorpusSignature } from "@/domain/corpusSignature";
+import { computeCorpusSignature } from "@/domain/corpusSignature";
 
 // --- Tipos públicos --------------------------------------------------------
 
@@ -60,22 +60,44 @@ export interface CautionZone {
   exampleDocumentId: string | null;
 }
 
-export interface StateOfArtOpinion {
-  signature: CorpusSignature;
-  corpus: {
-    documents: number;
-    products: number;
-    providers: number;
-    aiProducts: number;
-    baselineProducts: number;
-  };
+/** Documento que un abogado debería leer primero, con el motivo. */
+export interface DocumentRef {
+  id: string;
+  providerId: string;
+  providerName: string;
+  productName: string;
+  documentType: string;
+  reason: string;
+}
+
+/**
+ * Lectura jurídica central del corpus. Pensada para leerse como una OPINIÓN
+ * preliminar en prosa (no como un dashboard): el scoring vive internamente en
+ * los `ProductReading`, pero la pieza central son los textos y los enlaces a los
+ * documentos del corpus que sostienen cada afirmación.
+ */
+export interface StateOfArt {
+  // Firma y composición del corpus.
+  corpusSignature: string;
+  shortHash: string;
+  documentCount: number;
+  providerCount: number;
+  updatedAt: string;
+  corpus: { products: number; aiProducts: number; baselineProducts: number };
+
+  // Lectura (prosa).
   generalReading: string;
-  mostRestrictive: ProductReading | null;
-  mostExposed: ProductReading | null;
-  bestForProfessional: ProductReading[];
-  cautionZones: CautionZone[];
-  appreciations: string[];
-  limits: string[];
+  whyLegalCriteria: string;
+  aiVsEveryday: string;
+
+  // Hallazgos trazables.
+  keyCautions: CautionZone[];
+  mostRestrictiveProduct: ProductReading | null;
+  mostExposedLegalPracticeProduct: ProductReading | null;
+  documentsToReadFirst: DocumentRef[];
+
+  // Cierre.
+  limitations: string[];
   insufficientEvidence: boolean;
 }
 
@@ -294,7 +316,38 @@ function buildCautionZones(aiAnalyses: LicenseAnalysis[]): CautionZone[] {
   return zones.sort((a, b) => b.count - a.count);
 }
 
-export function buildStateOfArtOpinion(analyses: LicenseAnalysis[]): StateOfArtOpinion {
+/** Documento del producto cuyo tipo coincide con `match`. */
+function findDoc(reading: ProductReading | null, match: RegExp): { id: string; documentType: string } | undefined {
+  return reading?.documents.find((d) => match.test(d.documentType));
+}
+
+/** Construye la lista "qué leer primero", a partir de los productos señalados. */
+function buildDocumentsToReadFirst(
+  exposed: ProductReading | null,
+  restrictive: ProductReading | null,
+): DocumentRef[] {
+  const refs: DocumentRef[] = [];
+  const seen = new Set<string>();
+  const add = (r: ProductReading | null, doc: { id: string; documentType: string } | undefined, reason: string) => {
+    if (!r || !doc || seen.has(doc.id)) return;
+    seen.add(doc.id);
+    refs.push({
+      id: doc.id,
+      providerId: r.providerId,
+      providerName: r.providerName,
+      productName: r.productName,
+      documentType: doc.documentType,
+      reason,
+    });
+  };
+  add(exposed, findDoc(exposed, /privacy/i), "tratamiento de datos, retención y uso para entrenamiento");
+  add(exposed, findDoc(exposed, /terms|commercial/i), "licencia sobre el contenido y condiciones de uso");
+  add(restrictive, findDoc(restrictive, /terms|commercial/i), "limitación de responsabilidad, indemnidad y arbitraje");
+  add(restrictive, findDoc(restrictive, /privacy/i), "tratamiento de datos del producto señalado como más restrictivo");
+  return refs.slice(0, 4);
+}
+
+export function buildStateOfArt(analyses: LicenseAnalysis[]): StateOfArt {
   const signature = computeCorpusSignature(analyses);
   const products = aggregateByProduct(analyses);
   const aiProducts = products.filter((p) => !p.isBaseline);
@@ -302,65 +355,70 @@ export function buildStateOfArtOpinion(analyses: LicenseAnalysis[]): StateOfArtO
   const aiAnalyses = aiProducts.flatMap((p) => p.analyses);
 
   const readings = aiProducts.map(toReading);
-  const mostRestrictive = pickMax(readings, (r) => r.restrictiveness.value);
-  const mostExposed = pickMax(readings, (r) => r.exposure.value);
-  const bestForProfessional = [...readings]
-    .filter((r) => r.readiness.value > 0)
-    .sort((a, b) => b.readiness.value - a.readiness.value || a.productKey.localeCompare(b.productKey))
-    .slice(0, 3);
+  const mostRestrictiveProduct = pickMax(readings, (r) => r.restrictiveness.value);
+  const mostExposedLegalPracticeProduct = pickMax(readings, (r) => r.exposure.value);
 
-  const cautionZones = buildCautionZones(aiAnalyses);
-  const insufficientEvidence = aiProducts.length === 0 || (!mostRestrictive && !mostExposed);
+  const keyCautions = buildCautionZones(aiAnalyses);
+  const documentsToReadFirst = buildDocumentsToReadFirst(mostExposedLegalPracticeProduct, mostRestrictiveProduct);
+  const insufficientEvidence = aiProducts.length === 0 || (!mostRestrictiveProduct && !mostExposedLegalPracticeProduct);
 
-  const providers = new Set(analyses.map((a) => a.providerName)).size;
   const corpus = {
-    documents: analyses.length,
     products: products.length,
-    providers,
     aiProducts: aiProducts.length,
     baselineProducts: baselineProducts.length,
   };
 
-  const modeSpecific = aiAnalyses.filter((a) => a.sourceScope === "mode_specific" || a.sourceScope === "mixed").length;
-  const general = aiAnalyses.filter((a) => a.sourceScope === "general").length;
+  const cautionList = keyCautions.slice(0, 3).map((z) => z.label.toLowerCase()).join("; ") || "categorías diversas";
 
   const generalReading =
-    `Según el corpus actual —${corpus.documents} documentos de ${corpus.products} productos (${corpus.aiProducts} de IA y ` +
-    `${corpus.baselineProducts} de software cotidiano incorporados como referencia)— la evidencia disponible sugiere que ` +
-    `las cláusulas con mayor peso jurídico se concentran en ${cautionZones.slice(0, 3).map((z) => z.label.toLowerCase()).join(", ") || "categorías diversas"}. ` +
-    `Esta lectura es preliminar: se apoya en coincidencias léxicas con análisis de dirección jurídica, no en interpretación jurídica, y se circunscribe a los productos de IA del corpus.`;
+    `Según el corpus actual —${signature.documentCount} documentos de ${corpus.products} productos ` +
+    `(${corpus.aiProducts} de IA y ${corpus.baselineProducts} de software cotidiano incorporados como referencia)—, ` +
+    `la evidencia disponible sugiere que el clausulado de las herramientas de IA concentra su peso jurídico en ${cautionList}. ` +
+    `Lo que sigue es una lectura jurídica preliminar, trazable a los documentos del corpus: no es asesoramiento legal ni una conclusión definitiva.`;
 
-  const appreciations = [
-    `El corpus distingue ${corpus.aiProducts} productos de IA de ${corpus.baselineProducts} de software cotidiano incorporados como referencia: varios riesgos (analytics, licencias amplias, foros foráneos) preceden a la IA y no son exclusivos de ella.`,
-    `La modalidad de contratación cambia el régimen aplicable: ${modeSpecific} documentos del corpus de IA son específicos o mixtos por modalidad y ${general} son de aplicación general. Las condiciones de una modalidad no se trasladan automáticamente a otra.`,
-    `Documentos generales y documentos específicos no son intercambiables: un mismo producto puede tener un ToS de consumo y términos comerciales distintos; conviene leer el que aplica a cómo se contrata.`,
-    `Trasladar condiciones enterprise (DPA, compromiso de no entrenamiento, confidencialidad reforzada) a una cuenta gratuita o individual es un error frecuente: esos compromisos suelen vivir en los documentos comerciales, no en el consumo.`,
-    `Privacy Policy, Terms of Service, DPA, product terms y usage policies regulan aspectos distintos; leer uno solo puede inducir a error sobre el régimen completo.`,
-    `El parser distingue la dirección jurídica de la cláusula: cuando una cláusula impone obligaciones al usuario (p. ej. "no entrenarás modelos con los outputs") y no al proveedor, se reclasifica como uso prohibido y deja de contar como uso de datos por el proveedor.`,
-  ];
+  const whyLegalCriteria =
+    "Usar una herramienta de software —de IA o de uso cotidiano— rara vez es solo usar un programa: implica aceptar, casi " +
+    "siempre por adhesión y sin negociar, un contrato. Ese contrato define cuestiones concretas: si el proveedor puede usar " +
+    "tus datos, conversaciones o archivos; de quién es lo que la herramienta genera; qué ocurre si algo sale mal; y bajo qué " +
+    "ley y tribunales se discute. Leerlo con criterio jurídico no es un trámite técnico: es parte del ejercicio profesional " +
+    "responsable, sobre todo cuando hay información sensible o de clientes de por medio.";
 
-  const limits = [
-    `Esta lectura depende de los documentos disponibles al momento de la firma del corpus (sha256:${signature.shortHash}, ${signature.documentCount} documentos, actualizado ${signature.lastUpdated}) y cambia si cambia el corpus.`,
-    "La detección es léxica y preliminar; no reemplaza la lectura del texto fuente ni la revisión legal humana.",
-    "La mayoría de los documentos no fue validada por una persona abogada; las fuentes son públicas y se modifican con frecuencia.",
-    'Identificar un producto "más restrictivo" o "más expuesto" lo es según el corpus analizado, no como verdad universal ni como ranking de calidad o recomendación comercial.',
+  const aiVsEveryday =
+    `El corpus distingue ${corpus.aiProducts} productos de IA de ${corpus.baselineProducts} de software cotidiano, ` +
+    "incorporados como punto de comparación. La evidencia disponible sugiere una diferencia de énfasis más que de naturaleza: " +
+    "en la IA, el uso de inputs y outputs para entrenar o mejorar modelos aparece como eje del análisis; en el software " +
+    "tradicional, riesgos análogos ya existían bajo fórmulas más generales —analytics, personalización, licencias amplias " +
+    "sobre el contenido—. Conviene no asumir que la IA inventó estos riesgos ni que el software cotidiano está exento de ellos.";
+
+  const limitations = [
+    "No surge con claridad del análisis léxico el alcance exacto de cada cláusula: la lectura señala dónde mirar, no resuelve la interpretación.",
+    "La detección es preliminar y se apoya en coincidencias de texto con análisis de dirección jurídica; puede haber omisiones en redacciones atípicas.",
+    "La mayoría de los documentos no fue validada por una persona abogada; las fuentes son públicas y cambian con frecuencia.",
+    'Identificar un producto como "más restrictivo" o "más expuesto" lo es según el corpus analizado, no como verdad universal ni como recomendación o ranking comercial.',
+    "El producto más restrictivo y el más expuesto se eligen entre los productos de IA del corpus; el software cotidiano se incluye como referencia de comparación, no como candidato.",
+    `Esta lectura se basa en el corpus firmado (sha256:${signature.shortHash}) y debe recalcularse si el corpus cambia.`,
   ];
 
   return {
-    signature,
+    corpusSignature: signature.hash,
+    shortHash: signature.shortHash,
+    documentCount: signature.documentCount,
+    providerCount: signature.providerCount,
+    updatedAt: signature.lastUpdated,
     corpus,
     generalReading,
-    mostRestrictive,
-    mostExposed,
-    bestForProfessional,
-    cautionZones,
-    appreciations,
-    limits,
+    whyLegalCriteria,
+    aiVsEveryday,
+    keyCautions,
+    mostRestrictiveProduct,
+    mostExposedLegalPracticeProduct,
+    documentsToReadFirst,
+    limitations,
     insufficientEvidence,
   };
 }
 
-/** Top-N señales por peso (para mostrar "3 razones principales"). */
+/** Top-N señales por peso (para enumerar las razones principales en prosa). */
 export function topSignals(score: ProductScore, n: number): ScoreSignal[] {
   return [...score.signals].sort((a, b) => b.weight - a.weight).slice(0, n);
 }

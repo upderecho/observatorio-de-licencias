@@ -269,6 +269,24 @@ preliminar de privacidad** por modalidad: `strong` · `moderate` · `weak` · `u
 
 Se muestra como **"perfil preliminar"**, con señales y evidencia, y siempre sujeto a revisión legal.
 
+## Diseño centrado en comparación
+
+La comparación es el **principio organizador** del producto, no una vista más. La experiencia no
+se basa en **filtros** (deliberadamente ausentes): se elige una comparación significativa y se la
+recorre.
+
+- **`/compare`** abre en un **selector de presets** (no en una matriz). Los presets se generan de
+  los datos reales (escenarios jurídicos vía el motor `evaluateScenario`, "IA vs software tradicional",
+  "Redes sociales", etc.). Tras elegir uno: **selección guiada** de 2 a 4 unidades comparativas
+  (proveedor·producto), **tabla compacta** por eje jurídico (datos y privacidad, entrenamiento,
+  confidencialidad y seguridad, propiedad intelectual, responsabilidad, jurisdicción) con celdas
+  breves (estado · cautela · nº de evidencias) y **evidencia bajo demanda**.
+- La **matriz documental completa** sigue disponible como **modo experto** (botón "Abrir modo
+  experto"), sin filtros: solo agrupación.
+- El modelo vive en `src/domain/comparison.ts` (`buildComparisonUnits`, `buildComparisonPresets`,
+  `compareUnits`, `findDifferentialFindings`, `getEvidenceForComparison`). Determinístico, sin LLM,
+  export-safe. *(Rediseño transversal en etapas; `/compare` es la primera.)*
+
 ## Decisión por escenario de uso
 
 La puerta de entrada (la home, `/`) no es un dashboard de métricas: es una **pantalla de

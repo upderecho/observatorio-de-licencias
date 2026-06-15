@@ -38,16 +38,6 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
   const [review, setReview] = useState("");
   const [group, setGroup] = useState("");
 
-  const options = useMemo(() => {
-    const uniq = (xs: string[]) => Array.from(new Set(xs)).sort();
-    return {
-      providers: uniq(analyses.map((a) => a.providerName)),
-      products: uniq(analyses.map((a) => a.productName)),
-      modalities: uniq(analyses.map((a) => a.contractingMode)),
-      docTypes: uniq(analyses.map((a) => a.documentType)),
-    };
-  }, [analyses]);
-
   const filtered = useMemo(() => {
     const out = analyses.filter((a) => {
       if (source !== "all" && sourceKind(a) !== source) return false;
@@ -79,21 +69,12 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
 
   return (
     <div className="space-y-3">
+      {/* Agrupación (no filtro): cómo ordenar las columnas de la matriz. */}
       <div className="flex flex-wrap items-end gap-3 rounded border border-slate-200 bg-white p-3 text-sm">
-        <Segmented label="Comparar por" value={view} onChange={(v) => setView(v as View)} options={[{ value: "mode", label: "Modalidad" }, { value: "provider", label: "Proveedor" }, { value: "group", label: "IA vs tradicional" }]} />
-        <Sel label="Grupo" value={group} onChange={setGroup} options={["ai", "traditional_software", "social_platform", "mobile_ecosystem"]} render={(g) => COMPARISON_GROUP_LABEL[g] ?? g} />
-        <Sel label="Modalidad" value={modality} onChange={setModality} options={options.modalities} render={(m) => MODE_LABELS[m as keyof typeof MODE_LABELS] ?? m} />
-        <Sel label="Proveedor" value={provider} onChange={setProvider} options={options.providers} />
-        <Sel label="Producto" value={product} onChange={setProduct} options={options.products} />
-        <Sel label="Documento" value={docType} onChange={setDocType} options={options.docTypes} />
-        <Sel label="Fuente" value={source === "all" ? "" : source} onChange={(v) => setSource((v || "all") as SourceFilter)} options={["verified", "unverified"]} render={(v) => (v === "verified" ? "verificada" : "sin verificar")} />
-        <Sel label="Riesgo" value={risk} onChange={setRisk} options={["low", "medium", "high", "unknown"]} render={(r) => RISK_WORD[r as RiskLevel]} />
-        <Sel label="Privacidad" value={posture} onChange={setPosture} options={["strong", "moderate", "weak", "unknown"]} render={(p) => POSTURE_WORD[p] ?? p} />
-        <Sel label="Revisión" value={review} onChange={setReview} options={["unreviewed", "needs_legal_review", "reviewed", "rejected"]} />
-        <span className="ml-auto text-xs text-slate-500">{filtered.length} de {analyses.length}</span>
+        <Segmented label="Agrupar por" value={view} onChange={(v) => setView(v as View)} options={[{ value: "mode", label: "Modalidad" }, { value: "provider", label: "Proveedor" }, { value: "group", label: "IA vs tradicional" }]} />
       </div>
 
-      {(view === "group" || group) && (
+      {view === "group" && (
         <p className="rounded border border-l-4 border-slate-200 border-l-gold-500 bg-white p-3 text-xs leading-relaxed text-slate-600">
           En proveedores de IA, la categoría &quot;uso de datos para entrenamiento o mejora de modelos&quot; puede tener
           mayor centralidad. En software tradicional, puede aparecer bajo fórmulas más generales de mejora de
@@ -168,17 +149,6 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
   );
 }
 
-function Sel({ label, value, onChange, options, render }: { label: string; value: string; onChange: (v: string) => void; options: string[]; render?: (v: string) => string }) {
-  return (
-    <label className="flex flex-col gap-1">
-      <span className="text-xs uppercase tracking-wide text-slate-400">{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} className="rounded border border-slate-300 bg-white px-2 py-1 text-sm">
-        <option value="">Todas</option>
-        {options.map((o) => (<option key={o} value={o}>{render ? render(o) : o}</option>))}
-      </select>
-    </label>
-  );
-}
 
 function Segmented({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: { value: string; label: string }[] }) {
   return (

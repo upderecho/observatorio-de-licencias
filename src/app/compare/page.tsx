@@ -1,32 +1,30 @@
-import Link from "next/link";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
-import { ComparisonMatrix } from "@/components/ComparisonMatrix";
+import { buildComparisonUnits, buildComparisonPresets, getScenarioComparison } from "@/domain/comparison";
+import { ComparisonExplorer } from "@/components/ComparisonExplorer";
 
 export const metadata = { title: "Comparar — UP-Law-AILO" };
 
 export default async function ComparePage() {
   const analyses = await loadAllLicenseAnalyses();
+  const units = buildComparisonUnits(analyses);
+  const presets = buildComparisonPresets(units).map((p) =>
+    // Para presets de escenario, resolvemos la selección sugerida con el motor existente.
+    p.kind === "scenario" && p.scenarioId
+      ? { ...p, unitIds: getScenarioComparison(p.scenarioId, units, analyses) }
+      : p,
+  );
 
   return (
-    <div className="space-y-4">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-900">Matriz comparativa</h1>
-        <p className="text-slate-600">
-          Categorías jurídicas (filas) frente a proveedor / producto / plan (columnas).
+    <div className="mx-auto max-w-5xl space-y-6 py-4">
+      <header>
+        <h1 className="font-serif text-2xl font-bold text-slate-900">Comparar</h1>
+        <p className="mt-1 text-sm leading-relaxed text-slate-600">
+          ¿Qué cambia entre estas herramientas o modalidades? Elegí una comparación y leé sus condiciones por
+          eje jurídico, con la evidencia documental a un clic.
         </p>
-      </div>
+      </header>
 
-      {analyses.length === 0 ? (
-        <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center">
-          <p className="text-slate-600">No hay análisis para comparar.</p>
-          <Link href="/upload" className="mt-2 inline-block text-sky-700 underline">
-            Cargá una licencia
-          </Link>
-        </div>
-      ) : (
-        <ComparisonMatrix analyses={analyses} />
-      )}
-
+      <ComparisonExplorer units={units} presets={presets} />
     </div>
   );
 }

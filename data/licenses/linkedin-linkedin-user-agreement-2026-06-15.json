@@ -37,22 +37,25 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… our Services you agree to all of these terms. Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information. By creating a LinkedIn account or …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 858)"
+          "quote": "Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information.",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… a Visitor or Member of our Services, the collection, use, and sharing of your personal data is subject to our Privacy Policy , our Cookie Policy and other documents referenced in our Privacy Policy , and updates. You acknowledge and have read …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 1598)"
+          "quote": "As a Visitor or Member of our Services, the collection, use, and sharing of your personal data is subject to our Privacy Policy , our Cookie Policy and other documents referenced in our Privacy Policy , and updates.",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… Cookie Policy and other documents referenced in our Privacy Policy , and updates. You acknowledge and have read our Privacy Policy . Services This Contract applies to LinkedIn.com, LinkedIn-branded apps, and other LinkedIn-related sites, apps, …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 1735)"
+          "quote": "However, if law requires that you must be older in order for LinkedIn to lawfully provide the Services to you without parental consent (including using your personal data) then the Minimum Age is such older age.",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal data. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "not_found",
@@ -62,7 +65,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "found",
@@ -85,7 +91,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you own your, your content.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -108,7 +117,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: output.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -123,7 +135,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you grant.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "unclear",
@@ -146,7 +161,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: retain, storage, store.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "unclear",
@@ -161,7 +179,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: delete.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "found",
@@ -176,7 +197,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: confidential information.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -199,7 +223,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: security, protect.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -209,7 +236,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -232,7 +262,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: as is, no warranty, merchantability.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -251,7 +284,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: not be liable.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -261,7 +297,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -284,7 +323,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: governing law, laws of the state.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -299,7 +341,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: courts of.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -322,7 +367,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: dispute resolution.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -345,7 +393,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: we may modify.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -360,7 +411,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: enterprise.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -383,7 +437,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: under the age of, minimum age.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -393,12 +450,19 @@
         {
           "quote": "… to enforce a breach of this Contract, that does not mean that LinkedIn has waived its right to enforce this Contract. You may not assign or transfer this Contract (or your membership or use of Services) to anyone without our consent. However, you …",
           "locationHint": "coincidencia: \"you may not\" (~offset 26847)"
+        },
+        {
+          "quote": "You agree to: (1) protect against wrongful access to your account (e.g., use a strong password and keep it confidential); (2) not share or transfer your account or any part of it (e.g., sell or transfer the personal data of others by transferring your connections); and (3) fol…",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you may not.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you may not. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "unclear",
@@ -413,7 +477,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: business use.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "not_found",
@@ -423,12 +490,15 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-15T13:43:11.285Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-15T13:43:10.356Z",

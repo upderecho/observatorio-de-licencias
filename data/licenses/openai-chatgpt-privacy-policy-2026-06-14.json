@@ -35,8 +35,8 @@
     ],
     "evidence": [
       {
-        "quote": "… power ChatGPT. Read our instructions ⁠ (opens in a new window) on how you can opt out of our use of your Content to train our models. 3. Disclosure of Personal Data We disclose your Personal Data in the following circumstances: • Vendors, Service …",
-        "locationHint": "coincidencia: \"train our models\" (~offset 8568)"
+        "quote": "As noted above, we may use Content you provide us to improve our Services, for example to train the models that power ChatGPT.",
+        "locationHint": "coincidencia dirigida: \"to train\""
       }
     ]
   },
@@ -47,19 +47,19 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "OpenAI Select language … Updated: April 28, 2026 Privacy policy For individuals in the European Economic Area, United Kingdom, and Switzerland, you can read this version ⁠ of our …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 51)"
+          "quote": "We collect personal data relating to you (“Personal Data”) as follows:",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         },
         {
-          "quote": "… individuals in the European Economic Area, United Kingdom, and Switzerland, you can read this version ⁠ of our Privacy Policy. For individuals in the Republic of Korea, please refer to the Korea Addendum ⁠ . At OpenAI, our mission is to ensure …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 182)"
+          "quote": "Personal Data You Provide: We collect Personal Data if you create an account to use our Services or communicate with us as follows:",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         },
         {
-          "quote": "… your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to personal data that we collect from or about you, and how we use it when you use …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 675)"
+          "quote": "• User Content: We collect Personal Data that you provide in the input to our Services (“Content”), including your prompts and other content you upload, such as files ⁠ (opens in a new window) , images ⁠ (opens in a new window) , audio and video ⁠ (opens in a new window) , Sor…",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: personal data.",
       "appliesToModes": [
         "free",
         "paid_individual",
@@ -67,7 +67,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "found",
@@ -75,19 +78,19 @@
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… power ChatGPT. Read our instructions ⁠ (opens in a new window) on how you can opt out of our use of your Content to train our models. 3. Disclosure of Personal Data We disclose your Personal Data in the following circumstances: • Vendors, Service …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 8568)"
+          "quote": "As noted above, we may use Content you provide us to improve our Services, for example to train the models that power ChatGPT.",
+          "locationHint": "coincidencia dirigida: \"to train\""
         },
         {
-          "quote": "… These include the following controls: • You can easily choose whether your Content can be used to improve and train our models ⁠ (opens in a new window) . • You can decide whether we will remember details between chats to make Content more …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 16278)"
+          "quote": "Read our instructions ⁠ (opens in a new window) on how you can opt out of our use of your Content to train our models.",
+          "locationHint": "coincidencia dirigida: \"train our models\""
         },
         {
-          "quote": "… models. For information on how to exercise your rights with respect to data we have collected from the internet to train our models, please see this help center article ⁠ (opens in a new window) . OpenAI processes your Personal Data for the purposes …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 19241)"
+          "quote": "Once you choose to delete Personal Data, we will remove it from our systems within 30 days unless we need to retain it for longer as described below, or it has already been de-identified and disassociated from your account when you allow us to use your Content to improve our m…",
+          "locationHint": "coincidencia dirigida: \"improve our models\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: train our models.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: to train, train our models, improve our models.",
       "appliesToModes": [
         "free",
         "paid_individual",
@@ -95,7 +98,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "provider_data_use"
     },
     "input_ip": {
       "status": "found",
@@ -123,7 +129,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -143,7 +152,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "not_found",
@@ -158,7 +170,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -186,7 +201,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -206,7 +224,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -226,7 +247,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -246,7 +270,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -261,7 +288,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "not_found",
@@ -276,7 +306,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "unclear",
@@ -296,7 +329,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -311,7 +347,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -339,7 +378,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "unclear",
@@ -359,7 +401,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -379,7 +424,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -407,7 +455,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -427,7 +478,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -451,7 +505,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -471,7 +528,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "unclear",
@@ -495,7 +555,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -515,12 +578,15 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T20:55:05.516Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T20:55:04.018Z",

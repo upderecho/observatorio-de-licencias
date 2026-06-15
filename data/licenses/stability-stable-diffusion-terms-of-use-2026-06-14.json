@@ -39,21 +39,20 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… might collect, store, use, and/or share your personal information when you visit the Site, please read and review our Privacy Policy . Your Rights to Use the Site; Our Content and Intellectual Property Rights Subject to these Terms, Stability grants …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 1425)"
-        },
-        {
-          "quote": "… Violate these Terms or other policies and terms posted on, or otherwise applicable to, the Site; • Include sensitive personal information (such as phone numbers, residential addresses, health information, social security numbers, driver’s license numbers, …",
-          "locationHint": "coincidencia: \"personal information\" (~offset 4261)"
+          "quote": "For information concerning how and why we might collect, store, use, and/or share your personal information when you visit the Site, please read and review our Privacy Policy .",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
       "appliesToModes": [
         "free",
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "not_found",
@@ -66,7 +65,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "not_found",
@@ -79,7 +81,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "not_found",
@@ -92,7 +97,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "unclear",
@@ -118,7 +126,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "unclear",
@@ -136,7 +147,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "not_found",
@@ -149,7 +163,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "found",
@@ -167,7 +184,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -185,7 +205,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -198,7 +221,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -224,7 +250,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -250,7 +279,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -263,7 +295,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -289,7 +324,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -307,7 +345,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "found",
@@ -333,7 +374,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -351,7 +395,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "not_found",
@@ -364,7 +411,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "unclear",
@@ -390,7 +440,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -416,7 +469,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "unclear",
@@ -434,7 +490,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "not_found",
@@ -447,12 +506,15 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:25.612Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:24.765Z",

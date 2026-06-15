@@ -36,37 +36,34 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… provider or operator of the Third-Party Apps and Services. The Third-Party Apps and Services may present you with a privacy policy or require you to accept their terms before you can install or use the Third-Party App or Service. See section 13.b for …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 21707)"
+          "quote": "(the \" Privacy Statement \") as it describes the types of data we collect from you and your devices (\" Data \"), how we use your Data, and the legal bases we have to process your Data.",
+          "locationHint": "coincidencia dirigida: \"process your data\""
         },
         {
-          "quote": "… providing support services for the application. • 7. ENTIRE AGREEMENT. This agreement, any applicable privacy policy, any additional terms that accompany the application, and the terms for supplements and updates are the entire …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 111199)"
-        },
-        {
-          "quote": "… Content or material associated with the unlinked account will no longer be accessible by you. You agree to process any personal information of your Linked Account users in accordance with all applicable data protection laws. Your Skype Manager may be …",
-          "locationHint": "coincidencia: \"personal information\" (~offset 59214)"
+          "quote": "We will process your Data as described above in section 4.",
+          "locationHint": "coincidencia dirigida: \"process your data\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: process your data. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
-      "status": "unclear",
+      "status": "not_found",
       "riskLevel": "unknown",
-      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… advice. • ii. Reverse Engineering. You may not use the AI services to discover any underlying components of the models, algorithms, and systems. For example, you may not try to determine and remove the weights of models or extract any …",
-          "locationHint": "coincidencia: \"model\" (~offset 83721)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: model.",
+      "legalSummary": "No surge del texto un uso por el proveedor vinculado a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "found",
@@ -89,7 +86,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -112,7 +112,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: output.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -135,7 +138,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: license to use.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "unclear",
@@ -158,7 +164,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: retain, retention.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -173,7 +182,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: right to delete.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -196,7 +208,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: confidential, private.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -219,7 +234,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: security.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -229,7 +247,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -252,7 +273,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: as is, merchantability.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -271,7 +295,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: limitation of liability.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -281,7 +308,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -304,7 +334,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: laws of the state, applicable law.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -319,7 +352,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: exclusive jurisdiction, venue.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "found",
@@ -342,7 +378,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: binding arbitration.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -365,7 +404,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: changes to these terms, modify these terms.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "unclear",
@@ -388,7 +430,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: plan.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "unclear",
@@ -411,7 +456,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: minor.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -431,10 +479,13 @@
           "locationHint": "coincidencia: \"you may not\" (~offset 23413)"
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "found",
@@ -457,7 +508,10 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: commercial use.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -480,12 +534,15 @@
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: api.",
       "appliesToModes": [],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-15T13:43:09.488Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-15T13:43:08.668Z",

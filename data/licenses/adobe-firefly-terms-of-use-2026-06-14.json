@@ -50,8 +50,8 @@
         "locationHint": "compromiso de no entrenamiento"
       },
       {
-        "quote": "… to flag abusive behavior (such as spam or phishing). (F) Generative AI. We will not use your Local or Cloud Content to train generative AI models except for Content you choose to submit to the Adobe Stock marketplace, and this use is governed …",
-        "locationHint": "coincidencia: \"to train\" (~offset 15250)"
+        "quote": "We will not use your Local or Cloud Content to train generative AI models except for Content you choose to submit to the Adobe Stock marketplace, and this use is governed by the separate Adobe Stock Contributor Agreement.",
+        "locationHint": "coincidencia dirigida: \"to train\""
       }
     ]
   },
@@ -62,29 +62,25 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… access and control over all Content in your personal account or personal profile (except as otherwise indicated in the Privacy Policy); and (d) all references to “you” in the Terms will mean you as an individual. If you receive Entitlements through a …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 9031)"
+          "quote": "For information about how we collect, use, share, or otherwise process information about you and your use of our Services and Software, please see our Privacy Policy ( http://www.adobe.com/go/privacy) .",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… use, share, or otherwise process information about you and your use of our Services and Software, please see our Privacy Policy ( http://www.adobe.com/go/privacy) . You have the option to manage information preferences here: …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 11949)"
-        },
-        {
-          "quote": "… Cloud for teams or enterprise cloud storage HelpX: https://helpx.adobe.com/enterprise/kb/business-storage.html • Privacy Policy: https://www.adobe.com/privacy/policy.html • Adobe Privacy Choices: https://www.adobe.com/privacy/opt-out.html • …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 74495)"
+          "quote": "By using our Services and Software, you authorize Adobe to transfer your personal information across national borders and to other countries where Adobe and its partners operate.",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
-        "team"
+        "free",
+        "paid_individual",
+        "enterprise"
       ],
-      "modeSpecificity": "mode_specific",
-      "modeEvidence": [
-        {
-          "quote": "… Cloud for teams or enterprise cloud storage HelpX: https://helpx.adobe.com/enterprise/kb/business-storage.html • Privacy Policy: https://www.adobe.com/privacy/policy.html • Adobe Privacy Choices: https://www.adobe.com/privacy/opt-out.html • …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 74495)"
-        }
-      ]
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "found",
@@ -92,26 +88,29 @@
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… to flag abusive behavior (such as spam or phishing). (F) Generative AI. We will not use your Local or Cloud Content to train generative AI models except for Content you choose to submit to the Adobe Stock marketplace, and this use is governed …",
-          "locationHint": "coincidencia: \"to train\" (~offset 15250)"
+          "quote": "We will not use your Local or Cloud Content to train generative AI models except for Content you choose to submit to the Adobe Stock marketplace, and this use is governed by the separate Adobe Stock Contributor Agreement.",
+          "locationHint": "coincidencia dirigida: \"to train\""
         },
         {
-          "quote": "… or publish your content on Behance. Because it’s your content — not ours. This license does not give us permission to train generative AI models with your or your customers’ content. We don’t train generative AI models on your or your …",
-          "locationHint": "coincidencia: \"to train\" (~offset 33403)"
+          "quote": "This license does not give us permission to train generative AI models with your or your customers’ content.",
+          "locationHint": "coincidencia dirigida: \"to train\""
         },
         {
-          "quote": "… we do not have the right to, and will not, use your Content to market or promote Adobe. We will not use these rights to train generative AI models on your Content and will not use the sublicense rights to have anyone else train generative AI …",
-          "locationHint": "coincidencia: \"to train\" (~offset 36199)"
+          "quote": "We will not use these rights to train generative AI models on your Content and will not use the sublicense rights to have anyone else train generative AI models on your Content, except at your specific request (like you asking us to train a custom model on your Content).",
+          "locationHint": "coincidencia dirigida: \"to train\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: to train.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: to train. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "provider_data_use"
     },
     "input_ip": {
       "status": "found",
@@ -138,7 +137,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -165,7 +167,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -192,7 +197,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -215,7 +223,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -242,7 +253,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "found",
@@ -269,7 +283,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -296,7 +313,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -310,7 +330,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -337,7 +360,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -364,7 +390,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "found",
@@ -391,7 +420,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -418,7 +450,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -445,7 +480,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "found",
@@ -472,7 +510,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -495,7 +536,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -531,7 +575,10 @@
           "quote": "… Personal content stored in Creative Cloud and Document Cloud for teams or enterprise cloud storage HelpX: https://helpx.adobe.com/enterprise/kb/business-storage.html • Privacy Policy: …",
           "locationHint": "coincidencia: \"enterprise\" (~offset 74399)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -550,7 +597,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -570,14 +620,17 @@
           "locationHint": "coincidencia: \"you may not\" (~offset 20501)"
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "found",
@@ -596,7 +649,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -619,12 +675,15 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:36.742Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:36.232Z",

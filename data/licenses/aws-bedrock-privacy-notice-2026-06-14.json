@@ -40,49 +40,46 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… Peru S.R.L., located at Av. Jorge Basadre 349 San Isidro, Lima (“AWS Peru”), AWS Peru is the data controller and the personal data bank holder of the following data banks: customers, prospective customers, and vendors. Personal Information. …",
-          "locationHint": "coincidencia: \"personal data\" (~offset 28583)"
+          "quote": "This Privacy Notice describes how we collect and use your personal information in relation to AWS websites, applications, products, services, events, and experiences that reference this Privacy Notice (together, “AWS Offerings”).",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         },
         {
-          "quote": "… object to the processing of personal information; and • exercise any other rights afforded by the Peruvian Personal Data Protection Regulations. If you wish to do any of these things and you are an AWS Peru customer, please contact us …",
-          "locationHint": "coincidencia: \"personal data\" (~offset 29778)"
+          "quote": "• How We Use Personal Information",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         },
         {
-          "quote": "… Parties. We may share your personal information as described in this Privacy Notice and as permitted by the Peruvian Personal Data Protection Regulations, including to Amazon Web Services Inc., located at 410 Terry Avenue North, Seattle, WA …",
-          "locationHint": "coincidencia: \"personal data\" (~offset 30388)"
+          "quote": "• How We Share Personal Information",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: personal data.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: personal information, personal data.",
       "appliesToModes": [
         "api",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
-      "status": "unclear",
+      "status": "not_found",
       "riskLevel": "unknown",
-      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… assistance (including advertising and event management), conducting customer relationship management, and providing training. These third-party service providers have access to personal information needed to perform their functions, but may not …",
-          "locationHint": "coincidencia: \"training\" (~offset 5635)"
-        },
-        {
-          "quote": "… or other information about your interactions with products and services offered by us, our affiliates (such as AWS training courses), or third parties (such as products offered through the AWS Marketplace) in relation to AWS Offerings; • …",
-          "locationHint": "coincidencia: \"training\" (~offset 52154)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: training.",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "api",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "found",
@@ -101,7 +98,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "not_found",
@@ -115,7 +115,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "not_found",
@@ -129,7 +132,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -156,7 +162,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -183,7 +192,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -206,7 +218,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -233,7 +248,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -247,7 +265,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "not_found",
@@ -261,7 +282,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "not_found",
@@ -275,7 +299,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -289,7 +316,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -316,7 +346,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -343,7 +376,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -362,7 +398,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -389,7 +428,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "unclear",
@@ -416,7 +458,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -439,7 +484,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -458,7 +506,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "found",
@@ -477,7 +528,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -496,12 +550,15 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:34.564Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:33.283Z",

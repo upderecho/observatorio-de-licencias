@@ -21,25 +21,19 @@
   "retrievedAt": "2026-06-14T17:50:37.399Z",
   "rawTextPath": "data/extracted/replit-replit-ai-terms-of-service-2026-06-14.txt",
   "overall": {
-    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 17. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 16. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "high"
   },
   "privacy": {
-    "posture": "weak",
-    "rationale": "Perfil preliminar (no es conclusión jurídica). La redacción sugiere usos amplios de datos y/o controles poco claros de retención o eliminación. Requiere revisión legal humana. Señales: broad_training_use, retention_controls, deletion_control, confidentiality_commitment, broad_license.",
+    "posture": "moderate",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: retention_controls, deletion_control, confidentiality_commitment, broad_license.",
     "signals": [
-      "broad_training_use",
       "retention_controls",
       "deletion_control",
       "confidentiality_commitment",
       "broad_license"
     ],
-    "evidence": [
-      {
-        "quote": "… cryptocurrencies, or Cycles. • Scraping or otherwise obtaining content, whether for training or extracting data for machine learning models, reverse-engineering any part of the Service, or for any other purpose. • Infringing the privacy of other users, …",
-        "locationHint": "coincidencia: \"machine learning models\" (~offset 2836)"
-      }
-    ]
+    "evidence": []
   },
   "categories": {
     "privacy": {
@@ -48,45 +42,38 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… updated: February 23, 2026 A. Terms of Service Summary: When you use Replit, you are agreeing to these terms and our Privacy Policy , and promising to safeguard your account. You agree to use the service for non-commercial purposes and are of legal …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 124)"
-        },
-        {
-          "quote": "… a binding agreement with Replit, and you agree to comply with these Terms of Service (“Terms”) and also agree to our Privacy Policy ; if you do not agree, you must not use the Service. 2. Account Usage and Security You are responsible for …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 741)"
-        },
-        {
-          "quote": "… our prior written consent. 6. Data Protection and Privacy Your privacy is important to us. As explained in our Privacy Policy , which is part of this Terms, we want to inform you that we collect, use, and share your personal information and …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 7257)"
+          "quote": "As explained in our Privacy Policy , which is part of this Terms, we want to inform you that we collect, use, and share your personal information and usage data to provide and improve the Service, communicate with you, and for security purposes.",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
-      "status": "found",
-      "riskLevel": "high",
-      "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… cryptocurrencies, or Cycles. • Scraping or otherwise obtaining content, whether for training or extracting data for machine learning models, reverse-engineering any part of the Service, or for any other purpose. • Infringing the privacy of other users, …",
-          "locationHint": "coincidencia: \"machine learning models\" (~offset 2836)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: machine learning models.",
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "found",
@@ -113,7 +100,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "not_found",
@@ -127,7 +117,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -146,7 +139,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -165,7 +161,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -184,7 +183,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "found",
@@ -203,7 +205,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -230,7 +235,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -244,7 +252,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -267,7 +278,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -286,7 +300,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "found",
@@ -305,7 +322,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -332,7 +352,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -351,7 +374,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "not_found",
@@ -365,7 +391,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -384,7 +413,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "unclear",
@@ -411,7 +443,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -434,7 +469,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -454,14 +492,17 @@
           "locationHint": "coincidencia: \"prohibited\" (~offset 3081)"
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [
         "free",
         "paid_individual",
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "found",
@@ -484,7 +525,10 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -511,12 +555,15 @@
         "team"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:38.117Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:37.399Z",

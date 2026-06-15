@@ -20,12 +20,12 @@
   "retrievedAt": "2026-06-14T20:56:27.855Z",
   "rawTextPath": "data/extracted/midjourney-midjourney-terms-of-service-2026-06-14.txt",
   "overall": {
-    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 12. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 11. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "high"
   },
   "privacy": {
-    "posture": "weak",
-    "rationale": "Perfil preliminar (no es conclusión jurídica). La redacción sugiere usos amplios de datos y/o controles poco claros de retención o eliminación. Requiere revisión legal humana. Señales: unclear_deletion, broad_license.",
+    "posture": "unknown",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). No hay evidencia suficiente para fundar un perfil preliminar de privacidad. Requiere revisión legal humana. Señales: unclear_deletion, broad_license.",
     "signals": [
       "unclear_deletion",
       "broad_license"
@@ -34,48 +34,36 @@
   },
   "categories": {
     "privacy": {
-      "status": "found",
-      "riskLevel": "medium",
-      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… enter into the Service (the “Inputs”), your use of the Services, and other important topics like arbitration. Our privacy policy outlines how we handle your data here . Please carefully read these Terms, along with our privacy policy, and all other …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 754)"
-        },
-        {
-          "quote": "… outputs, and text prompts that You enter, or sample images or other content that You upload to the Service. Our privacy policy can be found here . 4. Content Rights Your Rights and Obligations You own all Assets You create with the Services to …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 5009)"
-        },
-        {
-          "quote": "… of the Assets for the Customer. 3. Your Information By using the Services, You may provide Midjourney with personal information like Your email address, user name, billing information, favorites, outputs, and text prompts that You enter, or sample …",
-          "locationHint": "coincidencia: \"personal information\" (~offset 4808)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information.",
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto un uso por el proveedor vinculado a el tratamiento de datos personales del usuario y sus finalidades. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
         "free",
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "training_use": {
-      "status": "unclear",
+      "status": "not_found",
       "riskLevel": "unknown",
-      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… after the cause of action accrues. Otherwise, such cause of action is permanently barred. 11. Image Editor and Video Model Midjourney’s Image Editor tool (“Editor”) and the Video Model (\"Video\") are provided as part of the Services and are …",
-          "locationHint": "coincidencia: \"model\" (~offset 16917)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: model.",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "free",
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "found",
@@ -97,7 +85,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -115,7 +106,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -141,7 +135,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "unclear",
@@ -167,7 +164,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "not_found",
@@ -180,7 +180,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -198,7 +201,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -216,7 +222,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -229,7 +238,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -255,7 +267,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -281,7 +296,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "found",
@@ -299,7 +317,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -325,7 +346,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -343,7 +367,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "found",
@@ -369,7 +396,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -395,7 +425,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "unclear",
@@ -421,7 +454,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -439,7 +475,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -459,13 +498,16 @@
           "locationHint": "coincidencia: \"you may not\" (~offset 3130)"
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you may not.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you may not. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [
         "free",
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "unclear",
@@ -483,7 +525,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -505,12 +550,15 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T20:56:30.737Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T20:56:27.855Z",

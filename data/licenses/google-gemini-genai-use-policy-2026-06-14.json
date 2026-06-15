@@ -20,12 +20,12 @@
   "retrievedAt": "2026-06-14T17:50:16.650Z",
   "rawTextPath": "data/extracted/google-gemini-genai-use-policy-2026-06-14.txt",
   "overall": {
-    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 3. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 2. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "medium"
   },
   "privacy": {
-    "posture": "moderate",
-    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: unclear_deletion.",
+    "posture": "unknown",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). No hay evidencia suficiente para fundar un perfil preliminar de privacidad. Requiere revisión legal humana. Señales: unclear_deletion.",
     "signals": [
       "unclear_deletion"
     ],
@@ -33,48 +33,36 @@
   },
   "categories": {
     "privacy": {
-      "status": "found",
-      "riskLevel": "medium",
-      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "Skip to main content Privacy & Terms Privacy & Terms Privacy & Terms • Overview • Privacy Policy • Terms of Service • Technologies • FAQ • Google Account Generative AI Prohibited Use Policy Last Modified: …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 86)"
-        },
-        {
-          "quote": "… services. • Violates the rights of others, including privacy and intellectual property rights -- for example, using personal data or biometrics without legally-required consent. • Tracks or monitors people without their consent. • Makes automated …",
-          "locationHint": "coincidencia: \"personal data\" (~offset 1120)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal data.",
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el tratamiento de datos personales del usuario y sus finalidades. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "free",
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "training_use": {
-      "status": "unclear",
+      "status": "not_found",
       "riskLevel": "unknown",
-      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… FAQ • Google Account Generative AI Prohibited Use Policy Last Modified: December 17, 2024 Generative AI models can help you explore, learn, and create. We expect you to engage with them in a responsible, legal, and safe manner. …",
-          "locationHint": "coincidencia: \"model\" (~offset 246)"
-        },
-        {
-          "quote": "… infrastructure or services. • Circumvention of abuse protections or safety filters -- for example, manipulating the model to contravene our policies. • Do not engage in sexually explicit, violent, hateful, or harmful activities. This …",
-          "locationHint": "coincidencia: \"model\" (~offset 1828)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: model.",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "free",
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "not_found",
@@ -87,7 +75,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -105,7 +96,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "not_found",
@@ -118,7 +112,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "not_found",
@@ -131,7 +128,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "not_found",
@@ -144,7 +144,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "not_found",
@@ -157,7 +160,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "unclear",
@@ -179,7 +185,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -192,7 +201,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "not_found",
@@ -205,7 +217,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "not_found",
@@ -218,7 +233,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -231,7 +249,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -249,7 +270,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "not_found",
@@ -262,7 +286,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "not_found",
@@ -275,7 +302,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "not_found",
@@ -288,7 +318,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "not_found",
@@ -301,7 +334,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "unclear",
@@ -327,7 +363,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -345,7 +384,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "not_found",
@@ -358,7 +400,10 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "not_found",
@@ -371,12 +416,15 @@
         "paid_individual"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:17.074Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:16.650Z",

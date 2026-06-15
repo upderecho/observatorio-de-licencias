@@ -21,24 +21,18 @@
   "retrievedAt": "2026-06-14T17:50:26.997Z",
   "rawTextPath": "data/extracted/elevenlabs-elevenlabs-privacy-policy-2026-06-14.txt",
   "overall": {
-    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 10. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 9. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "medium"
   },
   "privacy": {
     "posture": "moderate",
-    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: broad_training_use, enterprise_dpa, retention_controls, deletion_control.",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: enterprise_dpa, retention_controls, deletion_control.",
     "signals": [
-      "broad_training_use",
       "enterprise_dpa",
       "retention_controls",
       "deletion_control"
     ],
-    "evidence": [
-      {
-        "quote": "… and audio content and to improve our Services. We do not use Voice Data, Personal Data, or publicly available data used for training to profile or target consumers. (d) Content Moderation and User Suspension ElevenLabs does not undertake to review all …",
-        "locationHint": "coincidencia: \"used for training\" (~offset 18778)"
-      }
-    ]
+    "evidence": []
   },
   "categories": {
     "privacy": {
@@ -47,45 +41,46 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "Skip to content Log in Sign up Contact sales Log in • Sign up Sign up Privacy Policy Privacy Policy Updated 20 May 2026 Portuguese translation available at: elevenlabs.io/privacy-policy-portuguese This …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 73)"
+          "quote": "z o.o., Eleven Labs Auto India Private Limited, Eleven Labs Technology Middle East Limited, and Eleven Labs Japan Godo Kaisha) (together, “ ElevenLabs ”, “ we ”, “ our ”, or “ us ”) process Personal Data (defined below) of individuals who access or use our Websites (including …",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         },
         {
-          "quote": "… Policy Updated 20 May 2026 Portuguese translation available at: elevenlabs.io/privacy-policy-portuguese This Privacy Policy (“ Policy ”) explains how Eleven Labs Inc. and our affiliates (which, as of the date above, includes Eleven Labs Ltd., …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 206)"
+          "quote": "This Policy also explains your rights and choices about how we use your Personal Data, including how you may be able to access or update certain information about you.",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         },
         {
-          "quote": "… billing address, credit/debit card or banking information or other financial information. Please consult Stripe's privacy policy here . • Verification Information. As permissible by applicable law, we may ask you to provide verification of your …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 4776)"
+          "quote": "Where processing is based on consent, and to the extent permitted by law, by using the Services or otherwise engaging with ElevenLabs, you consent to the use of your Personal Data as described in this Policy.",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: personal data, privacy policy, personal information. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
-      "status": "found",
-      "riskLevel": "high",
-      "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
-      "evidence": [
-        {
-          "quote": "… and audio content and to improve our Services. We do not use Voice Data, Personal Data, or publicly available data used for training to profile or target consumers. (d) Content Moderation and User Suspension ElevenLabs does not undertake to review all …",
-          "locationHint": "coincidencia: \"used for training\" (~offset 18778)"
-        }
-      ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: used for training.",
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "input_ip": {
       "status": "unclear",
@@ -112,7 +107,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -139,7 +137,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "not_found",
@@ -153,7 +154,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -180,7 +184,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -199,7 +206,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -218,7 +228,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -245,7 +258,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "unclear",
@@ -268,7 +284,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "unclear",
@@ -287,7 +306,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "not_found",
@@ -301,7 +323,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -315,7 +340,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -342,7 +370,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "unclear",
@@ -369,7 +400,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "not_found",
@@ -383,7 +417,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -410,7 +447,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -432,7 +472,10 @@
           "quote": "… to individual users. This Policy does not apply when we offer our Services and process Personal Data on behalf of enterprise/business customers. We act as a service provider/data processor for those relationships, and our use of Personal Data …",
           "locationHint": "coincidencia: \"enterprise\" (~offset 1985)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -459,7 +502,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -479,14 +525,17 @@
           "locationHint": "coincidencia: \"you may not\" (~offset 7696)"
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "unclear",
@@ -509,7 +558,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -528,12 +580,15 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:27.279Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:26.997Z",

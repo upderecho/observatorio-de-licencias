@@ -40,26 +40,29 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "Privacy Policy Effective as of May 11, 2026 This Privacy Policy describes how Runway AI, Inc. (\" Runway ,\" \" we \", \" us \" or \" our …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 0)"
+          "quote": "(\" Runway ,\" \" we \", \" us \" or \" our \") processes information about you through our website, services, mobile application, social media pages, marketing activities, live events and other activities described in this Privacy Policy (collectively, the \" Service \").",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… mobile application, social media pages, marketing activities, live events and other activities described in this Privacy Policy (collectively, the \" Service \"). Runway may provide additional or supplemental privacy policies to individuals for …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 312)"
+          "quote": "We may disclose information about you to our affiliates for the purposes identified in this Privacy Policy.",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… Our processing of this information is at the direction of Customers and subject to our agreements with them. This Privacy Policy does not apply to such processing. If you have a question about how this information is processed, contact the …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 860)"
+          "quote": "California residents can request the categories of sources of such information; the business or commercial purpose for collecting or selling or sharing your personal information; and the categories of third parties to whom we disclose personal information.",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information, personal data. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "unclear",
@@ -67,26 +70,21 @@
       "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… products and as required by law. Vendors. Other parties like Amazon Web Services that provide, secure, promote, and improve our services. Advertising and analytics partners. We may disclose information about you to our advertising and analytics partners …",
-          "locationHint": "coincidencia: \"improve our services\" (~offset 13111)"
-        },
-        {
-          "quote": "… business purposes: Service delivery and operations. We may use information about you to: • provide, operate and improve the Service and our business; • personalize the Service, including remembering the devices from which you have previously logged …",
-          "locationHint": "coincidencia: \"improve the service\" (~offset 8471)"
-        },
-        {
-          "quote": "… and analytics. We and our analytics partners may use information about you to analyze your usage of the Service, improve the Service, conduct research, improve the rest of our business, help us understand user activity on the Service, including which …",
-          "locationHint": "coincidencia: \"improve the service\" (~offset 9351)"
+          "quote": "As part of our efforts to improve the Service, we may create aggregated, de-identified and/or anonymized data from personal data we collect.",
+          "locationHint": "coincidencia dirigida: \"improve the service\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: improve our services, improve the service.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: improve the service.",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "provider_data_use"
     },
     "input_ip": {
       "status": "unclear",
@@ -105,7 +103,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -128,7 +129,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "not_found",
@@ -142,7 +146,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -169,7 +176,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "found",
@@ -188,7 +198,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -211,7 +224,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -230,7 +246,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -244,7 +263,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "unclear",
@@ -263,7 +285,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "not_found",
@@ -277,7 +302,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -291,7 +319,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -318,7 +349,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "unclear",
@@ -345,7 +379,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -364,7 +401,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -391,7 +431,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -414,7 +457,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -437,7 +483,10 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -447,16 +496,23 @@
         {
           "quote": "… If you are a parent or guardian of a child from whom you believe we have collected personal information in a manner prohibited by law, please contact us. If we learn that we have collected personal information through the Service from a child …",
           "locationHint": "coincidencia: \"prohibited\" (~offset 39399)"
+        },
+        {
+          "quote": "Please note that we do not use or disclose sensitive personal information other than for purposes for which you cannot opt out under the CCPA (e.g., to enable you to log into your account, to provide the Service).",
+          "locationHint": "coincidencia dirigida: \"personal information\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
       "appliesToModes": [
         "free",
         "paid_individual",
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
     },
     "commercial_use": {
       "status": "found",
@@ -482,7 +538,10 @@
           "quote": "… the “categories” of personal information and sensitive personal information we collect and disclose for business or commercial purposes (as “categories” are defined by the CCPA); and (2) the categories of other parties to whom we disclose such information …",
           "locationHint": "coincidencia: \"commercial purposes\" (~offset 27182)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "unclear",
@@ -501,12 +560,15 @@
         "enterprise"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:26.372Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:26.248Z",

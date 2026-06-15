@@ -27,7 +27,7 @@ import { classifyClause, splitSentences } from "./clauseDirection";
 import { STRONG_MODE_PHRASES, DIFFERENTIATION_CUE, type ContractingMode } from "./contractingModes";
 import type { RiskLevel } from "./types";
 
-export const PARSER_VERSION = "0.2.0";
+export const PARSER_VERSION = "0.3.0";
 
 export interface ParseLicenseParams {
   id: string;

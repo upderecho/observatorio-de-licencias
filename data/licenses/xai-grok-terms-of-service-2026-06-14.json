@@ -34,8 +34,8 @@
     ],
     "evidence": [
       {
-        "quote": "… Service, you can select whether or not you want us to use your User Content to improve our products and services and train our models. Private Chat and User Content that you request to be deleted will be queued for deletion, which may take up to 30 …",
-        "locationHint": "coincidencia: \"train our models\" (~offset 8947)"
+        "quote": "When logged into our Service, you can select whether or not you want us to use your User Content to improve our products and services and train our models.",
+        "locationHint": "coincidencia dirigida: \"train our models\""
       }
     ]
   },
@@ -46,16 +46,12 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… “ Europe ”), your use of the Service is governed in part by the Europe Specific Terms (“ EST ”). • Please read our Privacy Policy , which describes how we collect, use and disclose personal information. Although it does not form part of these Terms, …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 868)"
+          "quote": "• Please read our Privacy Policy , which describes how we collect, use and disclose personal information.",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… usage or User Content trends; and (iii) to perform such other actions to enforce these Terms, comply with our Privacy Policy, comply with applicable law, or keep our Service safe. Automated systems that analyze your use of the Service and User …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 8236)"
-        },
-        {
-          "quote": "… or obtain from our Service for product development and model training purposes. Further details are available in our Privacy Policy and Consumer FAQs . Accuracy. Artificial intelligence is rapidly evolving and is probabilistic in nature; therefore, …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 9354)"
+          "quote": "By using the Service, you acknowledge that we may collect, use, and disclose your personal information and aggregated, pseudonymized, and/or de-identified data as set forth in our Privacy Policy , and that your personal information will be transferred to, and/or processed in, …",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         }
       ],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
@@ -65,7 +61,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "found",
@@ -73,8 +72,8 @@
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… Service, you can select whether or not you want us to use your User Content to improve our products and services and train our models. Private Chat and User Content that you request to be deleted will be queued for deletion, which may take up to 30 …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 8947)"
+          "quote": "When logged into our Service, you can select whether or not you want us to use your User Content to improve our products and services and train our models.",
+          "locationHint": "coincidencia dirigida: \"train our models\""
         }
       ],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: train our models.",
@@ -84,7 +83,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "provider_data_use"
     },
     "input_ip": {
       "status": "found",
@@ -107,7 +109,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -134,7 +139,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -161,7 +169,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "unclear",
@@ -188,7 +199,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "unclear",
@@ -215,7 +229,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "unclear",
@@ -238,7 +255,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -257,7 +277,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -271,7 +294,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "found",
@@ -298,7 +324,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "found",
@@ -321,7 +350,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "unclear",
@@ -344,7 +376,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -371,7 +406,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "found",
@@ -398,7 +436,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -417,7 +458,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "found",
@@ -443,7 +487,10 @@
           "quote": "… or “ us ”). By using our Service, you acknowledge and agree to these Terms. Please note: • We reserve the right to modify these Terms. • Our Enterprise Terms of Service govern the use of our services for developers and businesses, including xAI APIs …",
           "locationHint": "coincidencia: \"modify these terms\" (~offset 507)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -465,7 +512,10 @@
           "quote": "… Service, you acknowledge and agree to these Terms. Please note: • We reserve the right to modify these Terms. • Our Enterprise Terms of Service govern the use of our services for developers and businesses, including xAI APIs and PromptIDE. • If …",
           "locationHint": "coincidencia: \"enterprise\" (~offset 534)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -488,7 +538,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "found",
@@ -515,7 +568,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "unclear",
@@ -534,7 +590,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -564,12 +623,15 @@
           "quote": "… Terms. • Our Enterprise Terms of Service govern the use of our services for developers and businesses, including xAI APIs and PromptIDE. • If you reside in the European Economic Area, United Kingdom, or Switzerland (collectively, “ Europe …",
           "locationHint": "coincidencia: \"api\" (~offset 638)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:23.901Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:23.060Z",

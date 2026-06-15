@@ -38,8 +38,8 @@
     ],
     "evidence": [
       {
-        "quote": "… and your opt-out controls and other options, please visit our Cookie Policy . Personal data we collect or receive to train our models Anthropic obtains personal data from third party sources in order to train our models. Specifically, we train our …",
-        "locationHint": "coincidencia: \"train our models\" (~offset 6931)"
+        "quote": "Personal data we collect or receive to train our models",
+        "locationHint": "coincidencia dirigida: \"train our models\""
       }
     ]
   },
@@ -50,19 +50,19 @@
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… is an AI safety and research company working to build reliable, interpretable, and steerable AI systems. This Privacy Policy explains how we collect, use, disclose, and process your personal data when you use our website, Claude.ai, or other …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 202)"
+          "quote": "This Privacy Policy explains how we collect, use, disclose, and process your personal data when you use our website, Claude.ai, or other Anthropic products and services (the “Services”).",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         },
         {
-          "quote": "… personal data when you use our website, Claude.ai, or other Anthropic products and services (the “Services”). This Privacy Policy does not apply to content that we process on behalf of customers of our business offerings, such as our Enterprise …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 389)"
+          "quote": "We collect the following categories of personal data:",
+          "locationHint": "coincidencia dirigida: \"personal data\""
         },
         {
-          "quote": "… data is governed by our customer agreements covering access to and use of those offerings. Please see our Non-User Privacy Policy for information on how our large language models are ‘trained’ and how personal data obtained from third party sources, …",
-          "locationHint": "coincidencia: \"privacy policy\" (~offset 660)"
+          "quote": "For more information about how we collect and use personal data to develop our language models that power our Services, the steps we take to minimize the privacy impact on individuals through the training process, and your choices with respect to that information, please see o…",
+          "locationHint": "coincidencia dirigida: \"privacy policy\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal data.",
       "appliesToModes": [
         "free",
         "paid_individual",
@@ -71,7 +71,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
     },
     "training_use": {
       "status": "found",
@@ -79,19 +82,19 @@
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
-          "quote": "… and your opt-out controls and other options, please visit our Cookie Policy . Personal data we collect or receive to train our models Anthropic obtains personal data from third party sources in order to train our models. Specifically, we train our …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 6931)"
+          "quote": "Personal data we collect or receive to train our models",
+          "locationHint": "coincidencia dirigida: \"train our models\""
         },
         {
-          "quote": "… our models Anthropic obtains personal data from third party sources in order to train our models. Specifically, we train our models using data from the following sources: • Publicly available information via the Internet • Datasets that we obtain …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 7052)"
+          "quote": "We may use your Inputs and Outputs to train and improve Anthropic AI models, unless you opt out through your account settings.",
+          "locationHint": "coincidencia dirigida: \"to train\""
         },
         {
-          "quote": "… UK for the purposes outlined in Section 2 of this Privacy Policy, for example to provide you with the Service, or to train our models, or to conduct research. This may be a direct provision of your personal data to us, or a transfer that we or a third …",
-          "locationHint": "coincidencia: \"train our models\" (~offset 19636)"
+          "quote": "Anthropic is a global company, and when you access our Services, your personal data is transferred to our servers in the US, or to other countries outside the European Economic Area (“EEA”) and the UK for the purposes outlined in Section 2 of this Privacy Policy, for example t…",
+          "locationHint": "coincidencia dirigida: \"train our models\""
         }
       ],
-      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: train our models.",
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: train our models, to train.",
       "appliesToModes": [
         "free",
         "paid_individual",
@@ -100,7 +103,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "provider_data_use"
     },
     "input_ip": {
       "status": "unclear",
@@ -129,7 +135,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "output_ip": {
       "status": "unclear",
@@ -158,7 +167,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "license_grant": {
       "status": "found",
@@ -179,7 +191,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_retention": {
       "status": "found",
@@ -204,7 +219,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "data_deletion": {
       "status": "unclear",
@@ -233,7 +251,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "confidentiality": {
       "status": "found",
@@ -254,7 +275,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security": {
       "status": "found",
@@ -283,7 +307,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "security_duty": {
       "status": "not_found",
@@ -299,7 +326,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "warranties": {
       "status": "unclear",
@@ -320,7 +350,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "liability_limitation": {
       "status": "unclear",
@@ -341,7 +374,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "indemnity": {
       "status": "not_found",
@@ -357,7 +393,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "governing_law": {
       "status": "found",
@@ -386,7 +425,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "jurisdiction": {
       "status": "unclear",
@@ -415,7 +457,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "arbitration": {
       "status": "unclear",
@@ -436,7 +481,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "unilateral_changes": {
       "status": "unclear",
@@ -465,7 +513,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "plan_differences": {
       "status": "found",
@@ -495,7 +546,10 @@
           "quote": "… use an email address owned by your employer or another organization, your account may be linked to the organization’s enterprise account with us, as described in our Consumer Terms of Service. Anthropic may also receive or disclose personal data …",
           "locationHint": "coincidencia: \"enterprise\" (~offset 10910)"
         }
-      ]
+      ],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "minors": {
       "status": "found",
@@ -520,7 +574,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "prohibited_content": {
       "status": "unclear",
@@ -541,7 +598,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "commercial_use": {
       "status": "found",
@@ -562,7 +622,10 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     },
     "api_references": {
       "status": "found",
@@ -587,12 +650,15 @@
         "api"
       ],
       "modeSpecificity": "general",
-      "modeEvidence": []
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
     }
   },
   "metadata": {
     "createdAt": "2026-06-14T17:50:09.881Z",
-    "parserVersion": "0.2.0",
+    "parserVersion": "0.3.0",
     "isMock": false,
     "reviewStatus": "unreviewed",
     "retrievedAt": "2026-06-14T17:50:06.933Z",

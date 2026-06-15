@@ -136,8 +136,8 @@ export const PROVIDER_CONTEXT: Record<string, string> = {
     "X se incorpora como plataforma cotidiana de referencia y, a la vez, es relevante para la IA: sus propios " +
     "términos habilitan el uso de los contenidos públicos de la plataforma para entrenar modelos —incluido Grok, de " +
     "xAI—. El Terms of Service y la Privacy Policy son generales y aplican a toda la base de usuarios; el corpus " +
-    "detecta señales de privacidad débiles. Conviene leerlos junto con el expediente de xAI/Grok para entender el " +
-    "flujo de datos entre ambos.",
+    "detecta señales de privacidad de intermedias a débiles según el documento. Conviene leerlos junto con el " +
+    "expediente de xAI/Grok para entender el flujo de datos entre ambos.",
 };
 
 /** Devuelve el contexto editorial del proveedor, o null si no hay nota cargada. */

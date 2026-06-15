@@ -6,6 +6,7 @@ import {
   scenarioHref,
   type LegalUseScenario,
 } from "@/domain/legalUseScenarios";
+import { SCENARIO_ICON, CardIcon } from "@/components/icons";
 
 export const metadata = { title: "Escenarios de uso — UP-Law-AILO" };
 
@@ -13,16 +14,20 @@ const NAV_SCENARIOS = LEGAL_USE_SCENARIOS.filter((s) => s.kind === "navigation")
 
 function Card({ s }: { s: LegalUseScenario }) {
   const action = s.kind === "evaluable" ? "Evaluar escenario" : s.kind === "academic" ? "Abrir comparación" : "Abrir";
+  const Icon = SCENARIO_ICON[s.id];
   return (
     <Link
       href={scenarioHref(s)}
-      className="group rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300 hover:bg-slate-50"
+      className="group flex gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300 hover:bg-slate-50"
     >
-      <h3 className="font-medium text-slate-900">{s.title}</h3>
-      <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.short}</p>
-      <span className="mt-3 inline-block text-sm font-medium text-sky-700">
-        {action} <span className="transition-transform group-hover:translate-x-0.5">→</span>
-      </span>
+      {Icon && <CardIcon icon={Icon} />}
+      <div>
+        <h3 className="font-medium text-slate-900">{s.title}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.short}</p>
+        <span className="mt-3 inline-block text-sm font-medium text-sky-700">
+          {action} <span className="transition-transform group-hover:translate-x-0.5">→</span>
+        </span>
+      </div>
     </Link>
   );
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { computeMetrics } from "@/lib/derive";
 import { HOME_SCENARIO_CARDS } from "@/domain/legalUseScenarios";
+import { SCENARIO_ICON, ACADEMIC_ICON, CardIcon } from "@/components/icons";
 
 const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/analyses", label: "Evidencia documental" },
@@ -42,13 +43,16 @@ export default async function HomePage() {
             <Link
               key={s.id}
               href={`/escenarios/${s.id}`}
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300 hover:bg-slate-50"
+              className="group flex gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300 hover:bg-slate-50"
             >
-              <h3 className="font-medium text-slate-900">{s.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.short}</p>
-              <span className="mt-3 inline-block text-sm font-medium text-sky-700">
-                Evaluar escenario <span className="transition-transform group-hover:translate-x-0.5">→</span>
-              </span>
+              {SCENARIO_ICON[s.id] && <CardIcon icon={SCENARIO_ICON[s.id]} />}
+              <div>
+                <h3 className="font-medium text-slate-900">{s.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.short}</p>
+                <span className="mt-3 inline-block text-sm font-medium text-sky-700">
+                  Evaluar escenario <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                </span>
+              </div>
             </Link>
           ))}
         </div>
@@ -66,15 +70,19 @@ export default async function HomePage() {
           distinguir qué riesgos son propios de la IA y cuáles ya existen en el software cotidiano.
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
-          {ACADEMIC_CARDS.map((c) => (
-            <Link
-              key={c.title}
-              href={c.href}
-              className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50"
-            >
-              {c.title}
-            </Link>
-          ))}
+          {ACADEMIC_CARDS.map((c) => {
+            const Icon = ACADEMIC_ICON[c.title];
+            return (
+              <Link
+                key={c.title}
+                href={c.href}
+                className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50"
+              >
+                {Icon && <Icon className="h-4 w-4 text-slate-400" strokeWidth={1.75} aria-hidden="true" />}
+                {c.title}
+              </Link>
+            );
+          })}
         </div>
       </section>
 

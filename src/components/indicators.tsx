@@ -18,7 +18,7 @@ import {
  * grandes compitiendo entre sí.
  */
 
-type Tone = "red" | "amber" | "emerald" | "sky" | "slate";
+export type Tone = "red" | "amber" | "emerald" | "sky" | "slate";
 
 const DOT: Record<Tone, string> = {
   red: "text-red-600",

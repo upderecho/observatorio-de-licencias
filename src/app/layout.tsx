@@ -19,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${lora.variable} ${inter.variable}`}>
       <body className="min-h-screen">
         <Header />
-        <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
-        <footer className="mx-auto max-w-7xl px-4 py-8">
+        <main className="mx-auto max-w-[1600px] px-4 py-6 sm:px-6">{children}</main>
+        <footer className="mx-auto max-w-[1600px] px-4 py-8 sm:px-6">
           <LegalDisclaimer />
         </footer>
       </body>

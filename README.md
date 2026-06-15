@@ -302,9 +302,9 @@ Universidad de Palermo**.
 Co-creadores y autores intelectuales:
 
 - **Guido Barosio** — [LinkedIn](https://www.linkedin.com/in/gbarosio) · [@gbs1977](https://x.com/gbs1977)
-- **Juan Cruz Romano**
-- **Hernán Quadri**
-- **Aníbal Ramírez**
+- **Juan Cruz Romano** - [LinkedIn](https://www.linkedin.com/in/juan-cruz-romano/) 
+- **Hernán Quadri**  - [LinkedIn](https://www.linkedin.com/in/gabriel-hernan-quadri-b3194925/) . [@ghernanq](https://x.com/ghernanq)
+- **Aníbal Ramírez** - [LinkedIn](ttps://www.linkedin.com/in/an%C3%ADbal-ram%C3%ADrez-5b92041a2)
 
 ## Licencia
 

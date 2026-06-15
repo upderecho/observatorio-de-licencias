@@ -263,9 +263,14 @@ auditoría**, no como un catálogo de tarjetas. Cuatro niveles:
 
 - **Panel (`/`)** — dashboard ejecutivo: franja de métricas sobria, accesos, advertencia
   metodológica y criterio resumido. Sin grilla de cards.
-- **Tabla de análisis (`/analyses`)** — la vista principal: una fila por documento, con
-  búsqueda y filtros (proveedor, modalidad, documento, riesgo, privacidad, fuente, revisión,
-  origen) y orden por columna. Escala a 100+ análisis.
+- **Tabla de análisis (`/analyses`)** — la vista principal, pensada como **registro de due
+  diligence documental** a ancho completo. Encabezado con métricas resumidas; toolbar compacta
+  con búsqueda prominente, filtros rápidos (modalidad, proveedor, riesgo, privacidad) y
+  **filtros avanzados** plegables (documento, fuente, revisión, origen); orden por columna.
+  Columnas agrupadas (proveedor/producto y modalidad/documento en una celda), fuente y revisión
+  con etiqueta corta + texto secundario. Opción **agrupar por proveedor** (secciones con sus
+  documentos) y **panel lateral de vista rápida** al seleccionar una fila, con acceso al dossier
+  completo. Escala a 100+ análisis.
 - **Proveedores (`/providers` y `/providers/[id]`)** — primero la lista de proveedores; al
   entrar, un expediente organizado **por modalidad de contratación**, que evidencia qué
   documentos existen y cuáles faltan por modalidad.

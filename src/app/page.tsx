@@ -4,6 +4,7 @@ import { computeMetrics } from "@/lib/derive";
 import { HOME_SCENARIO_CARDS } from "@/domain/legalUseScenarios";
 import { SCENARIO_ICON, CardIcon } from "@/components/icons";
 import { PageContainer } from "@/components/PageContainer";
+import { computeCorpusSignature } from "@/domain/corpusSignature";
 
 const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/analyses", label: "Corpus documental" },
@@ -15,6 +16,7 @@ const SECONDARY_LINKS: { href: string; label: string }[] = [
 export default async function HomePage() {
   const analyses = await loadAllLicenseAnalyses();
   const m = computeMetrics(analyses);
+  const sig = computeCorpusSignature(analyses);
 
   return (
     <PageContainer className="space-y-10">
@@ -25,12 +27,25 @@ export default async function HomePage() {
           Observatorio jurídico-académico para leer y auditar condiciones legales de herramientas de IA y
           software cotidiano.
         </p>
-        <h2 className="pt-2 font-serif text-xl font-semibold text-slate-900">¿Qué necesitás leer?</h2>
       </header>
+
+      {/* Corpus documental (primer bloque) */}
+      <section className="rounded-lg border border-slate-200 bg-white p-5">
+        <h2 className="font-serif text-xl font-semibold text-slate-900">Corpus documental</h2>
+        <p className="mt-1 text-base leading-relaxed text-slate-600">
+          Explorá los documentos fuente —términos de uso, políticas de privacidad y de producto— organizados
+          por grupo, proveedor, producto y modalidad. Incluye IA y software cotidiano usado por abogados como
+          corpus de referencia.
+        </p>
+        <Link href="/analyses" className="mt-3 inline-block text-sm font-medium text-sky-700 hover:underline">
+          Abrir corpus documental →
+        </Link>
+      </section>
 
       {/* Escenarios → guías de lectura */}
       <section>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <h2 className="font-serif text-xl font-semibold text-slate-900">¿Qué necesitás leer?</h2>
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {HOME_SCENARIO_CARDS.map((s) => (
             <Link
               key={s.id}
@@ -53,18 +68,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Corpus documental (acceso secundario) */}
-      <section className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="font-medium text-slate-900">Ir al corpus documental</h2>
-        <p className="mt-1 text-sm leading-relaxed text-slate-600">
-          Explorá los documentos fuente organizados por grupo, proveedor, producto y modalidad. Incluye IA y
-          software cotidiano usado por abogados como corpus de referencia.
-        </p>
-        <Link href="/analyses" className="mt-2 inline-block text-sm font-medium text-sky-700 hover:underline">
-          Abrir corpus documental →
-        </Link>
-      </section>
-
       {/* Propósito académico */}
       <section>
         <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Propósito académico</h2>
@@ -74,6 +77,54 @@ export default async function HomePage() {
           facilitar lectura jurídica, trazabilidad y discusión académica. No constituye asesoramiento legal.
           {" "}
           <Link href="/acerca" className="text-sky-700 hover:underline">Acerca del proyecto →</Link>
+        </p>
+      </section>
+
+      {/* Ensayo de cierre, firmado contra el corpus vigente */}
+      <section className="border-t border-slate-200 pt-8">
+        <h2 className="font-serif text-2xl font-semibold text-slate-900">
+          Estado del arte: leer software con criterio jurídico
+        </h2>
+        <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-slate-700">
+          <p>
+            Cuando una persona del derecho usa una herramienta de IA —o el correo, la suite de
+            productividad o la red social de todos los días— no solo usa un programa: acepta, casi siempre
+            por adhesión y sin negociar, un contrato. Esas condiciones definen cosas concretas: si el
+            proveedor puede usar tus conversaciones, prompts o archivos para entrenar o mejorar sus modelos;
+            cuánto los retiene y si los borra; de quién es lo que la herramienta genera; qué pasa si algo
+            sale mal; y bajo qué ley y tribunales se discute. Leer esas cláusulas no es un trámite técnico:
+            es parte del ejercicio profesional responsable.
+          </p>
+          <p>
+            ¿Dónde prestar atención? En el uso de datos para entrenamiento, la confidencialidad, la
+            retención y la eliminación, la seguridad, la propiedad del output, la limitación de
+            responsabilidad y la jurisdicción —con especial cuidado en la transferencia internacional de
+            datos cuando el proveedor es global y el usuario, latinoamericano—. Un punto central: las
+            condiciones cambian según la modalidad de contratación. Lo que ofrece un plan empresarial (un
+            DPA, un compromiso de no-entrenamiento, confidencialidad reforzada) no se traslada
+            automáticamente a una cuenta gratuita o individual. Conviene leer el documento que efectivamente
+            aplica a cómo se contrata, no el más favorable que exista en el ecosistema.
+          </p>
+          <p>
+            El estado del arte hoy es heterogéneo y cambiante. En los proveedores de IA, el uso de datos
+            para entrenamiento o "mejora del servicio" suele tener un papel central; en el software
+            tradicional, riesgos parecidos ya existían bajo fórmulas más generales de analytics o
+            personalización —por eso este observatorio los incorpora como corpus de referencia—. La mayoría
+            de los documentos no fue validada por una persona abogada, las fuentes son públicas y se
+            modifican con frecuencia, y la detección de cláusulas es preliminar y léxica. Nada de esto
+            reemplaza la lectura del texto fuente ni el criterio profesional.
+          </p>
+          <p>
+            En la práctica: elegí el escenario de uso, mirá la modalidad real, exigí la evidencia textual
+            que respalda cada lectura y, para información sensible o de clientes, preferí modalidades
+            empresariales con compromisos explícitos y revisión contractual previa. UP-Law-AILO ordena qué
+            leer y por qué; la decisión —y la revisión legal humana— siguen siendo indispensables.
+          </p>
+        </div>
+        <p className="mt-4 text-xs leading-relaxed text-slate-400">
+          Firma del corpus: <code className="text-slate-500">sha256:{sig.shortHash}</code> · {sig.documentCount} documentos ·{" "}
+          {sig.providerCount} proveedores · actualizado {sig.lastUpdated}. Esta firma se recalcula con cada
+          actualización de licencias del corpus.
         </p>
       </section>
 

@@ -11,6 +11,7 @@ import {
   READING_PRIORITY_LABEL,
   type ReadingPriority,
 } from "@/domain/readingGuides";
+import { PageContainer } from "@/components/PageContainer";
 
 export async function generateStaticParams() {
   const all = await loadAllLicenseAnalyses();
@@ -50,7 +51,7 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
   });
 
   return (
-    <div className="mx-auto max-w-7xl space-y-6 py-4">
+    <PageContainer className="space-y-6">
       <Link href="/analyses" className="text-sm text-sky-700 hover:underline">← Volver al corpus documental</Link>
 
       {/* Encabezado documental */}
@@ -143,6 +144,6 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
           <SourceIndicator analysis={analysis} />
         </div>
       </details>
-    </div>
+    </PageContainer>
   );
 }

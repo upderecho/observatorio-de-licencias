@@ -3,6 +3,7 @@ import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { computeMetrics } from "@/lib/derive";
 import { HOME_SCENARIO_CARDS } from "@/domain/legalUseScenarios";
 import { SCENARIO_ICON, CardIcon } from "@/components/icons";
+import { PageContainer } from "@/components/PageContainer";
 
 const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/analyses", label: "Corpus documental" },
@@ -16,7 +17,7 @@ export default async function HomePage() {
   const m = computeMetrics(analyses);
 
   return (
-    <div className="mx-auto max-w-4xl space-y-10 py-4">
+    <PageContainer className="space-y-10">
       {/* Hero */}
       <header className="space-y-3">
         <h1 className="font-serif text-3xl font-bold text-slate-900">UP-Law-AILO</h1>
@@ -90,6 +91,6 @@ export default async function HomePage() {
       <p className="border-t border-slate-200 pt-4 text-sm text-slate-500">
         Corpus actual: {m.providers} proveedores · {m.total} documentos · IA y software cotidiano · fuentes públicas
       </p>
-    </div>
+    </PageContainer>
   );
 }

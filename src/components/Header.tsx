@@ -8,7 +8,7 @@ const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 export function Header() {
   return (
     <header className="border-b-2 border-gold-500 bg-slate-900 text-white">
-      <div className="mx-auto flex max-w-[1600px] flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-6 py-3 sm:flex-row sm:items-center sm:justify-between lg:px-10 xl:px-12">
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-baseline gap-2">
             <span className="font-serif text-xl font-bold tracking-tight text-white">UP-Law-AILO</span>

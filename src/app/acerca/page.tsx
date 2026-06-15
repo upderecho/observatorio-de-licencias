@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Acerca del proyecto — UP-Law-AILO" };
 
 export default function AcercaPage() {
   return (
-    <div className="mx-auto max-w-3xl space-y-6 py-4">
+    <PageContainer>
+      <div className="max-w-3xl space-y-6">
       <Link href="/" className="text-sm text-sky-700 hover:underline">← Inicio</Link>
 
       <header>
@@ -46,6 +48,7 @@ export default function AcercaPage() {
         Observatorio académico · lectura jurídica de software · evidencia documental pública · trazabilidad ·
         alfabetización jurídica digital. No constituye asesoramiento legal.
       </p>
-    </div>
+      </div>
+    </PageContainer>
   );
 }

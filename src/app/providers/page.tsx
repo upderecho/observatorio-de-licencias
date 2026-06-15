@@ -4,6 +4,7 @@ import { loadRegistry } from "@/lib/sources";
 import { loadAllLegalBundles } from "@/lib/coverage";
 import { COMPARISON_GROUP_LABEL, SOFTWARE_CATEGORY_LABEL } from "@/lib/analysisMeta";
 import { ProviderOverview } from "@/components/ProviderOverview";
+import { PageContainer } from "@/components/PageContainer";
 import { LegalBundlePanel } from "@/components/LegalBundlePanel";
 
 export const metadata = { title: "Proveedores — UP-Law-AILO" };
@@ -46,7 +47,7 @@ export default async function ProvidersPage() {
   const bundles = await loadAllLegalBundles();
 
   return (
-    <div className="space-y-6">
+    <PageContainer className="space-y-6">
       <header>
         <h1 className="text-xl font-bold text-slate-900">Proveedores</h1>
         <p className="text-sm text-slate-600">
@@ -111,6 +112,6 @@ export default async function ProvidersPage() {
           </div>
         </section>
       )}
-    </div>
+    </PageContainer>
   );
 }

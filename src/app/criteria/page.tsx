@@ -1,3 +1,4 @@
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Criterio de riesgo — UP-Law-AILO" };
 
@@ -17,7 +18,8 @@ const PRIVACY: { nivel: string; texto: string }[] = [
 
 export default function CriteriaPage() {
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
+    <PageContainer>
+      <div className="max-w-3xl space-y-6">
       <header>
         <h1 className="text-xl font-bold text-slate-900">Criterio de riesgo</h1>
         <p className="text-sm text-slate-600">
@@ -70,7 +72,8 @@ export default function CriteriaPage() {
         Estos criterios sirven para priorizar revisión legal humana. No son conclusiones jurídicas definitivas.
       </p>
 
-    </div>
+      </div>
+    </PageContainer>
   );
 }
 

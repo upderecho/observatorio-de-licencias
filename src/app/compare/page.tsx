@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Vista retirada — UP-Law-AILO" };
 
 export default function RetiredComparePage() {
   return (
-    <div className="mx-auto max-w-2xl space-y-4 py-10 text-center">
+    <PageContainer>
+      <div className="mx-auto max-w-2xl space-y-4 py-10 text-center">
       <h1 className="font-serif text-2xl font-bold text-slate-900">Esta vista fue retirada</h1>
       <p className="text-sm leading-relaxed text-slate-600">
         UP-Law-AILO ya no organiza la experiencia como comparación de herramientas. Ahora guía la
@@ -18,6 +20,7 @@ export default function RetiredComparePage() {
           Ir al Corpus documental
         </Link>
       </div>
-    </div>
+      </div>
+    </PageContainer>
   );
 }

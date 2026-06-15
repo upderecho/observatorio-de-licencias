@@ -12,6 +12,7 @@ import {
   type ReadingPriority,
   type DocumentToRead,
 } from "@/domain/readingGuides";
+import { PageContainer } from "@/components/PageContainer";
 
 export async function generateStaticParams() {
   return getAllReadingGuides().map((g) => ({ scenarioId: g.id }));
@@ -38,7 +39,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
   const byPriority = PRIORITY_ORDER.map((p) => ({ priority: p, docs: documents.filter((d) => d.readingPriority === p) })).filter((g) => g.docs.length > 0);
 
   return (
-    <div className="mx-auto max-w-7xl space-y-8 py-4">
+    <PageContainer className="space-y-8">
       <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">← Escenarios</Link>
 
       <header className="max-w-3xl space-y-2">
@@ -104,7 +105,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
       <p className="max-w-3xl rounded-md border border-l-4 border-slate-200 border-l-gold-500 bg-white p-4 text-sm leading-relaxed text-slate-700">
         {guide.limitations}
       </p>
-    </div>
+    </PageContainer>
   );
 }
 

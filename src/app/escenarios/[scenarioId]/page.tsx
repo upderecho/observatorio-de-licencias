@@ -13,6 +13,7 @@ import {
   type DocumentToRead,
 } from "@/domain/readingGuides";
 import { PageContainer } from "@/components/PageContainer";
+import { EscenariosGate, EscenariosUnavailable } from "@/components/featureGates";
 
 export async function generateStaticParams() {
   return getAllReadingGuides().map((g) => ({ scenarioId: g.id }));
@@ -39,6 +40,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
   const byPriority = PRIORITY_ORDER.map((p) => ({ priority: p, docs: documents.filter((d) => d.readingPriority === p) })).filter((g) => g.docs.length > 0);
 
   return (
+    <EscenariosGate fallback={<EscenariosUnavailable />}>
     <PageContainer className="space-y-8">
       <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">← Escenarios</Link>
 
@@ -106,6 +108,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
         {guide.limitations}
       </p>
     </PageContainer>
+    </EscenariosGate>
   );
 }
 

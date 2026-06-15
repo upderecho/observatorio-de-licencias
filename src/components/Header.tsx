@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EscenariosNavLink } from "@/components/featureGates";
 
 // En el sitio estático de GitHub Pages no hay servidor: la carga web (/upload)
 // no se incluye en ese build. La ingesta ahí es 100% local por CLI.
@@ -26,11 +27,16 @@ export function Header() {
             { href: "/providers", label: "Proveedores" },
             { href: "/criteria", label: "Criterio" },
             { href: "/acerca", label: "Acerca" },
-          ].map((l) => (
-            <Link key={l.href} href={l.href} className="rounded-md px-2 py-1 text-slate-200 hover:bg-white/10 hover:text-white">
-              {l.label}
-            </Link>
-          ))}
+          ].map((l) =>
+            // "Escenarios" detrás de feature flag (?flag=true), resuelto en cliente.
+            l.href === "/escenarios" ? (
+              <EscenariosNavLink key={l.href} />
+            ) : (
+              <Link key={l.href} href={l.href} className="rounded-md px-2 py-1 text-slate-200 hover:bg-white/10 hover:text-white">
+                {l.label}
+              </Link>
+            ),
+          )}
           {!isStaticExport && (
             <Link
               href="/upload"

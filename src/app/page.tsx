@@ -7,6 +7,7 @@ import { PageContainer } from "@/components/PageContainer";
 import { computeCorpusSignature } from "@/domain/corpusSignature";
 import { buildStateOfArtOpinion } from "@/domain/stateOfArt";
 import { StateOfArtReading } from "@/components/StateOfArtReading";
+import { EscenariosGate } from "@/components/featureGates";
 
 const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/analyses", label: "Corpus documental" },
@@ -64,7 +65,8 @@ export default async function HomePage() {
         </Link>
       </section>
 
-      {/* Escenarios → guías de lectura */}
+      {/* Escenarios → guías de lectura (detrás de feature flag ?flag=true) */}
+      <EscenariosGate>
       <section>
         <h2 className="font-serif text-xl font-semibold text-slate-900">¿Qué necesitás leer?</h2>
         <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -89,6 +91,7 @@ export default async function HomePage() {
           <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">Ver otros escenarios →</Link>
         </div>
       </section>
+      </EscenariosGate>
 
       {/* Propósito académico */}
       <section>

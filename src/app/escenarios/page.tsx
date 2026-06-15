@@ -2,11 +2,13 @@ import Link from "next/link";
 import { EVALUABLE_SCENARIOS } from "@/domain/legalUseScenarios";
 import { SCENARIO_ICON, CardIcon } from "@/components/icons";
 import { PageContainer } from "@/components/PageContainer";
+import { EscenariosGate, EscenariosUnavailable } from "@/components/featureGates";
 
 export const metadata = { title: "Escenarios — UP-Law-AILO" };
 
 export default function ScenariosIndexPage() {
   return (
+    <EscenariosGate fallback={<EscenariosUnavailable />}>
     <PageContainer className="space-y-6">
       <header className="max-w-3xl space-y-1">
         <Link href="/" className="text-sm text-sky-700 hover:underline">← Inicio</Link>
@@ -40,5 +42,6 @@ export default function ScenariosIndexPage() {
         Las guías organizan lectura documental preliminar. No constituyen asesoramiento legal.
       </p>
     </PageContainer>
+    </EscenariosGate>
   );
 }

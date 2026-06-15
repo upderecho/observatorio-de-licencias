@@ -38,7 +38,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
   const byPriority = PRIORITY_ORDER.map((p) => ({ priority: p, docs: documents.filter((d) => d.readingPriority === p) })).filter((g) => g.docs.length > 0);
 
   return (
-    <div className="mx-auto max-w-[1200px] space-y-8 py-4">
+    <div className="mx-auto max-w-7xl space-y-8 py-4">
       <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">← Escenarios</Link>
 
       <header className="max-w-3xl space-y-2">

@@ -50,12 +50,12 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
   });
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 py-4">
+    <div className="mx-auto max-w-7xl space-y-6 py-4">
       <Link href="/analyses" className="text-sm text-sky-700 hover:underline">← Volver al corpus documental</Link>
 
       {/* Encabezado documental */}
       <header className="space-y-1 border-b border-slate-200 pb-4">
-        <h1 className="font-serif text-2xl font-bold text-slate-900">{analysis.providerName} · {analysis.productName}</h1>
+        <h1 className="font-serif text-3xl font-bold text-slate-900">{analysis.providerName} · {analysis.productName}</h1>
         <p className="text-slate-700">{analysis.documentType} · {MODE_LABELS[analysis.contractingMode]}</p>
         <p className="text-sm text-slate-500">
           Documento fuente obtenido el {date}{domain ? <> desde {domain}</> : null}.
@@ -67,9 +67,9 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
       </p>
 
       {/* Qué leer en este documento (protagonista) */}
-      <section className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="font-serif text-lg font-semibold text-slate-900">Qué leer en este documento</h2>
-        <p className="mt-1 text-sm leading-relaxed text-slate-600">
+      <section className="rounded-lg border border-slate-200 bg-white p-5">
+        <h2 className="font-serif text-xl font-semibold text-slate-900">Qué leer en este documento</h2>
+        <p className="mt-1 text-base leading-relaxed text-slate-600">
           {relevant.length > 0
             ? <>Este documento aporta evidencia sobre {relevant.slice(0, 6).map((c) => c.label.toLowerCase()).join(", ")}.</>
             : "No se detectaron cláusulas con evidencia suficiente en este documento."}
@@ -89,9 +89,9 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
         )}
       </section>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {/* Columna principal: lectura jurídica */}
-        <div className="space-y-6 md:col-span-2">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-6 lg:grid-cols-[2fr_1fr]">
+        {/* Columna principal: lectura jurídica (≈70%) */}
+        <div className="space-y-6">
           {scenarios.length > 0 && (
             <section>
               <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Escenarios relacionados</h2>
@@ -121,8 +121,8 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
           </section>
         </div>
 
-        {/* Aside: contexto documental */}
-        <aside className="space-y-4">
+        {/* Aside: contexto documental (≈30%) */}
+        <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
           <ModeIndicator analysis={analysis} />
           <PrivacyIndicator analysis={analysis} />
           <RiskIndicator analysis={analysis} />

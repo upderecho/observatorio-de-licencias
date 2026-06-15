@@ -6,7 +6,7 @@ export const metadata = { title: "Escenarios — UP-Law-AILO" };
 
 export default function ScenariosIndexPage() {
   return (
-    <div className="mx-auto max-w-[1200px] space-y-6 py-4">
+    <div className="mx-auto max-w-7xl space-y-6 py-4">
       <header className="max-w-3xl space-y-1">
         <Link href="/" className="text-sm text-sky-700 hover:underline">← Inicio</Link>
         <h1 className="font-serif text-3xl font-bold text-slate-900">Escenarios jurídicos</h1>

@@ -3,6 +3,7 @@ import { loadAllLicenseAnalyses } from "@/lib/storage";
 import type { LicenseAnalysis } from "@/lib/schema";
 import { MODE_LABELS } from "@/lib/contractingModes";
 import { COMPARISON_GROUP_LABEL } from "@/lib/analysisMeta";
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Corpus documental — UP-Law-AILO" };
 
@@ -48,7 +49,7 @@ export default async function CorpusPage() {
   const hierarchy = buildHierarchy(analyses);
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 py-4">
+    <PageContainer className="space-y-6">
       <header>
         <h1 className="font-serif text-2xl font-bold text-slate-900">Corpus documental</h1>
         <p className="mt-1 text-sm leading-relaxed text-slate-600">
@@ -108,6 +109,6 @@ export default async function CorpusPage() {
         El corpus incluye IA y software cotidiano usado por abogados (correo, productividad, redes sociales y
         ecosistemas móviles) como corpus de referencia. Documentos públicos; no constituye asesoramiento legal.
       </p>
-    </div>
+    </PageContainer>
   );
 }

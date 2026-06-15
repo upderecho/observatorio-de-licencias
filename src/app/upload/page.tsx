@@ -1,10 +1,12 @@
 import { UploadOrPasteForm } from "@/components/UploadOrPasteForm";
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Cargar licencia — UP-Law-AILO" };
 
 export default function UploadPage() {
   return (
-    <div className="mx-auto max-w-3xl space-y-4">
+    <PageContainer>
+      <div className="mx-auto max-w-3xl space-y-4">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Cargar licencia</h1>
         <p className="text-slate-600">
@@ -17,6 +19,7 @@ export default function UploadPage() {
         <UploadOrPasteForm />
       </div>
 
-    </div>
+      </div>
+    </PageContainer>
   );
 }

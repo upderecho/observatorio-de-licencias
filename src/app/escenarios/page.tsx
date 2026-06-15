@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { EVALUABLE_SCENARIOS } from "@/domain/legalUseScenarios";
 import { SCENARIO_ICON, CardIcon } from "@/components/icons";
+import { PageContainer } from "@/components/PageContainer";
 
 export const metadata = { title: "Escenarios — UP-Law-AILO" };
 
 export default function ScenariosIndexPage() {
   return (
-    <div className="mx-auto max-w-7xl space-y-6 py-4">
+    <PageContainer className="space-y-6">
       <header className="max-w-3xl space-y-1">
         <Link href="/" className="text-sm text-sky-700 hover:underline">← Inicio</Link>
         <h1 className="font-serif text-3xl font-bold text-slate-900">Escenarios jurídicos</h1>
@@ -38,6 +39,6 @@ export default function ScenariosIndexPage() {
       <p className="text-xs leading-relaxed text-slate-500">
         Las guías organizan lectura documental preliminar. No constituyen asesoramiento legal.
       </p>
-    </div>
+    </PageContainer>
   );
 }

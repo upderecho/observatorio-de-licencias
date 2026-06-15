@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadLicenseAnalysis, loadAnalysisText, loadAllLicenseAnalyses } from "@/lib/storage";
+import { PageContainer } from "@/components/PageContainer";
 
 // Pre-genera el visor de texto fuente para cada análisis (export estático).
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export default async function SourceTextPage({ params }: { params: Promise<{ id:
   const text = await loadAnalysisText(analysis);
 
   return (
-    <div className="space-y-4">
+    <PageContainer className="space-y-4">
       <Link href={`/analysis/${id}`} className="text-sm text-sky-700 hover:underline">
         ← Volver al análisis
       </Link>
@@ -46,6 +47,6 @@ export default async function SourceTextPage({ params }: { params: Promise<{ id:
           {text}
         </pre>
       )}
-    </div>
+    </PageContainer>
   );
 }

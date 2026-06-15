@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
 import type { LicenseAnalysis } from "@/lib/schema";
+import { compareProviders } from "@/lib/derive";
 import { MODE_LABELS } from "@/lib/contractingModes";
 import { COMPARISON_GROUP_LABEL } from "@/lib/analysisMeta";
 import { PageContainer } from "@/components/PageContainer";
@@ -34,7 +35,7 @@ function buildHierarchy(analyses: LicenseAnalysis[]) {
     .map(([group, provs]) => ({
       group,
       providers: [...provs.entries()]
-        .sort((a, b) => a[0].localeCompare(b[0]))
+        .sort((a, b) => compareProviders(a[0], b[0]))
         .map<ProviderNode>(([providerName, prods]) => ({
           providerName,
           products: [...prods.entries()]

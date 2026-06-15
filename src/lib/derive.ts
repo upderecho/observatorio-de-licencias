@@ -144,6 +144,19 @@ export interface ProviderSummary {
   analyses: LicenseAnalysis[];
 }
 
+/**
+ * Orden de proveedores: Anthropic, OpenAI y xAI (Grok) siempre primero; el resto
+ * alfabético. Comparador reutilizable para listados de proveedores.
+ */
+const PINNED_PROVIDERS = ["Anthropic", "OpenAI", "xAI"];
+export function compareProviders(a: string, b: string): number {
+  const ia = PINNED_PROVIDERS.indexOf(a);
+  const ib = PINNED_PROVIDERS.indexOf(b);
+  const ra = ia === -1 ? PINNED_PROVIDERS.length : ia;
+  const rb = ib === -1 ? PINNED_PROVIDERS.length : ib;
+  return ra !== rb ? ra - rb : a.localeCompare(b);
+}
+
 export function providerKey(a: LicenseAnalysis): string {
   return a.metadata.providerId ?? a.providerName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
@@ -186,5 +199,5 @@ export function providerSummaries(analyses: LicenseAnalysis[]): ProviderSummary[
       analyses: docs.sort((a, b) => a.documentType.localeCompare(b.documentType)),
     });
   }
-  return out.sort((a, b) => a.providerName.localeCompare(b.providerName));
+  return out.sort((a, b) => compareProviders(a.providerName, b.providerName));
 }

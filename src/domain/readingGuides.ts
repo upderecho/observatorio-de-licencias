@@ -11,6 +11,7 @@
 
 import type { LicenseAnalysis } from "@/lib/schema";
 import { CATEGORY_BY_KEY, CATEGORIES } from "@/lib/categories";
+import { compareProviders } from "@/lib/derive";
 import { SCENARIO_BY_ID, EVALUABLE_SCENARIOS, type LegalUseScenario } from "./legalUseScenarios";
 
 export type ReadingPriority = "high" | "medium" | "low" | "insufficient";
@@ -130,7 +131,7 @@ export function getDocumentsForReadingGuide(guide: ReadingGuide, analyses: Licen
     .sort(
       (x, y) =>
         PRIORITY_RANK[x.readingPriority] - PRIORITY_RANK[y.readingPriority] ||
-        x.providerName.localeCompare(y.providerName) ||
+        compareProviders(x.providerName, y.providerName) ||
         x.documentType.localeCompare(y.documentType),
     );
 }

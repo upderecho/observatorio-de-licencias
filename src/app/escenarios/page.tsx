@@ -6,17 +6,17 @@ export const metadata = { title: "Escenarios — UP-Law-AILO" };
 
 export default function ScenariosIndexPage() {
   return (
-    <div className="mx-auto max-w-4xl space-y-6 py-4">
-      <header className="space-y-1">
+    <div className="mx-auto max-w-[1200px] space-y-6 py-4">
+      <header className="max-w-3xl space-y-1">
         <Link href="/" className="text-sm text-sky-700 hover:underline">← Inicio</Link>
-        <h1 className="font-serif text-2xl font-bold text-slate-900">Escenarios jurídicos</h1>
-        <p className="text-sm leading-relaxed text-slate-600">
+        <h1 className="font-serif text-3xl font-bold text-slate-900">Escenarios jurídicos</h1>
+        <p className="text-base leading-relaxed text-slate-600">
           Cada escenario es una <strong>guía de lectura</strong>: qué documentos leer, qué cláusulas revisar y
           con qué prioridad, según el tipo de información o trabajo profesional.
         </p>
       </header>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {EVALUABLE_SCENARIOS.map((s) => (
           <Link
             key={s.id}

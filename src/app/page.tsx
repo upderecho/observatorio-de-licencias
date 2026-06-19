@@ -8,12 +8,20 @@ import { isNonCommercialProject } from "@/domain/taxonomies/providerTypes";
 import { StateOfArtReading } from "@/components/StateOfArtReading";
 import { EscenariosGate } from "@/components/featureGates";
 import { providerSummaries } from "@/lib/derive";
-import { ModeToggle } from "@/components/ModeProvider";
-import { ProductLabelCard } from "@/components/ProductLabelCard";
+import { riskWord } from "@/components/indicators";
+import { MODE_LABELS } from "@/lib/contractingModes";
+import type { RiskLevel } from "@/lib/types";
 import { LegalDisclaimer } from "@/components/Disclaimer";
 
-// El Estado del arte es la pieza central de la home. Estos accesos son soporte
-// de lectura, no el eje: escenarios (recorridos), corpus, proveedores, criterio.
+// Punto de color (refuerzo, no semántica) para el riesgo peor del proveedor.
+const RISK_DOT: Record<RiskLevel, string> = {
+  low: "text-emerald-600",
+  medium: "text-amber-600",
+  high: "text-red-600",
+  unknown: "text-slate-400",
+};
+
+// Accesos secundarios de soporte de lectura: escenarios, corpus, criterio.
 const ACCESS_LINKS: { href: string; label: string; desc: string; gated?: boolean }[] = [
   { href: "/escenarios", label: "Escenarios", desc: "Recorridos de lectura por tipo de uso", gated: true },
   { href: "/analyses", label: "Corpus documental", desc: "Todos los documentos analizados" },
@@ -42,8 +50,9 @@ export default async function HomePage() {
 
   const state = buildStateOfArt(analyses, registrySummary);
 
-  // Galería proveedor → producto (sección principal). Orden de proveedores y
-  // agrupación por producto vienen de la derivación pura (derive.ts).
+  // Índice de proveedores (sección principal): una tarjeta por proveedor que
+  // enlaza a su página, donde vive el etiquetado frontal. Orden de proveedores
+  // desde la derivación pura (derive.ts).
   const providers = providerSummaries(analyses);
 
   return (
@@ -57,46 +66,53 @@ export default async function HomePage() {
         </p>
       </header>
 
-      {/* SECCIÓN PRINCIPAL · Etiquetado frontal por proveedor y producto */}
-      <section id="etiquetado" aria-labelledby="etiquetado-title" className="space-y-5 scroll-mt-24">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div className="max-w-2xl space-y-1">
-            <h2 id="etiquetado-title" className="font-serif text-2xl font-semibold text-slate-900">
-              Etiquetado frontal del corpus
-            </h2>
-            <p className="text-sm text-slate-500">
-              Cada producto, por modalidad de contratación, con sus advertencias (octógonos), cautelas y la tabla
-              nutricional del clausulado. Todo deriva del corpus y remite a evidencia textual; no es un ranking.
-            </p>
-          </div>
-          <ModeToggle />
+      {/* SECCIÓN PRINCIPAL · Índice de proveedores */}
+      <section id="proveedores" aria-labelledby="proveedores-title" className="space-y-5 scroll-mt-24">
+        <div className="max-w-2xl space-y-1">
+          <h2 id="proveedores-title" className="font-serif text-2xl font-semibold text-slate-900">
+            Proveedores
+          </h2>
+          <p className="text-sm text-slate-500">
+            Elegí un proveedor para ver su etiquetado frontal: advertencias (octógonos), cautelas y la tabla nutricional
+            del clausulado, por producto y modalidad. No es un ranking.
+          </p>
         </div>
 
         <p className="max-w-3xl text-xs leading-snug text-slate-400">
-          Lectura sobre el corpus firmado <code className="text-slate-500">sha256:{state.shortHash}</code> ({state.documentCount}{" "}
-          documentos, {state.providerCount} proveedores). Si el corpus cambia, el etiquetado se recalcula.
+          Corpus firmado <code className="text-slate-500">sha256:{state.shortHash}</code> ({state.documentCount}{" "}
+          documentos, {state.providerCount} proveedores). Si el corpus cambia, la lectura se recalcula.
         </p>
         <LegalDisclaimer />
 
-        <div className="space-y-10">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {providers.map((p) => (
-            <div key={p.providerId} className="space-y-4">
-              <h3 className="border-b border-slate-200 pb-1 font-serif text-xl font-semibold text-slate-800">
-                {p.providerName}
-              </h3>
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-                {p.products.map((productName) => (
-                  <ProductLabelCard
-                    key={productName}
-                    providerId={p.providerId}
-                    productName={productName}
-                    analyses={p.analyses.filter((a) => a.productName === productName)}
-                  />
-                ))}
-              </div>
-            </div>
+            <li key={p.providerId}>
+              <Link
+                href={`/providers/${p.providerId}`}
+                className="flex h-full flex-col justify-between gap-3 rounded-lg border border-slate-200 bg-white p-4 hover:bg-slate-50"
+              >
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-slate-900">{p.providerName}</h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    {p.products.length} producto{p.products.length !== 1 ? "s" : ""} · {p.docCount} documento
+                    {p.docCount !== 1 ? "s" : ""}
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Modalidades: {p.modes.map((m) => MODE_LABELS[m]).join(", ")}
+                  </p>
+                </div>
+                <div className="flex items-end justify-between gap-2">
+                  <span className="text-xs text-slate-600">
+                    <span className={RISK_DOT[p.worstRisk as RiskLevel] ?? "text-slate-400"} aria-hidden>●</span> riesgo{" "}
+                    {riskWord(p.worstRisk as RiskLevel)}
+                    {p.unreviewed > 0 && <span className="text-slate-400"> · {p.unreviewed} sin revisar</span>}
+                  </span>
+                  <span className="text-sm text-sky-700">ver etiquetado →</span>
+                </div>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* SECUNDARIO · Estado del arte (lectura jurídica preliminar) */}

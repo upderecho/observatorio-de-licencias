@@ -2,10 +2,13 @@ import Link from "next/link";
 import type { LicenseAnalysis } from "@/lib/schema";
 import type { ContractingMode } from "@/lib/contractingModes";
 import { MODE_LABELS, SOURCE_STATUS_LABELS } from "@/lib/analysisMeta";
+import { providerKey } from "@/lib/derive";
 import { providerRegionLabel } from "@/domain/taxonomies/providerRegions";
 import { providerTypeLabel } from "@/domain/taxonomies/providerTypes";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
+import { ProductLabelCard } from "./ProductLabelCard";
+import { ModeToggle } from "./ModeProvider";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
 
@@ -34,6 +37,7 @@ export function ProviderDossier({
   taxonomy?: ProviderTaxonomy | null;
 }) {
   const provider = analyses[0]?.providerName ?? "—";
+  const providerId = analyses[0] ? providerKey(analyses[0]) : "";
   const products = Array.from(new Set(analyses.map((a) => a.productName))).sort();
   const detected = new Set<ContractingMode>();
   for (const a of analyses) {
@@ -84,6 +88,30 @@ export function ProviderDossier({
           </div>
         </dl>
       </header>
+
+      {/* Etiquetado frontal: resumen visual por producto × modalidad (octógonos,
+          cautelas y tabla nutricional). Es la entrada del expediente; el detalle
+          jurídico/fuentes queda debajo. */}
+      <section className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Etiquetado frontal</h2>
+            <p className="text-sm text-slate-500">Por producto y modalidad. Deriva del corpus y remite a evidencia textual. No es un ranking.</p>
+          </div>
+          <ModeToggle />
+        </div>
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+          {products.map((productName) => (
+            <ProductLabelCard
+              key={productName}
+              providerId={providerId}
+              productName={productName}
+              analyses={analyses.filter((a) => a.productName === productName)}
+              showProviderLink={false}
+            />
+          ))}
+        </div>
+      </section>
 
       {/* Contexto editorial: antecede al análisis jurídico; fundado en los documentos del corpus. */}
       {context && (

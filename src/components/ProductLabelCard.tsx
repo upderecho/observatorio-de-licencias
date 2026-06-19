@@ -32,10 +32,13 @@ export function ProductLabelCard({
   providerId,
   productName,
   analyses,
+  showProviderLink = true,
 }: {
   providerId: string;
   productName: string;
   analyses: LicenseAnalysis[];
+  /** Oculta el link "ver expediente" cuando ya estamos en la página del proveedor. */
+  showProviderLink?: boolean;
 }) {
   const modes = useMemo(() => orderModes(availableModesFor(analyses)), [analyses]);
   const [mode, setMode] = useState<ContractingMode>(() => defaultModeFor(analyses));
@@ -54,9 +57,11 @@ export function ProductLabelCard({
     <article className="space-y-4 rounded-lg border border-slate-200 bg-white p-4">
       <header className="flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="font-serif text-lg font-semibold text-slate-900">{productName}</h3>
-        <Link href={`/providers/${providerId}`} className="text-xs text-sky-700 hover:underline">
-          ver expediente →
-        </Link>
+        {showProviderLink && (
+          <Link href={`/providers/${providerId}`} className="text-xs text-sky-700 hover:underline">
+            ver expediente →
+          </Link>
+        )}
       </header>
 
       {/* Selector de modalidad por tarjeta. */}

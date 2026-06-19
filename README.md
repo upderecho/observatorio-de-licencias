@@ -1,11 +1,11 @@
 # UP-Law-AILO
 
-[![CI](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml)
-[![Deploy to GitHub Pages](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/deploy-pages.yml)
+[![CI](https://github.com/UPDerechoIA/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/UPDerechoIA/observatorio-de-licencias/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/UPDerechoIA/observatorio-de-licencias/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/UPDerechoIA/observatorio-de-licencias/actions/workflows/deploy-pages.yml)
 
 **Observatorio académico de condiciones legales de software.**
 
-🌐 **Sitio publicado (solo lectura):** https://upderecho.github.io/observatorio-de-licencias/
+🌐 **Sitio publicado (solo lectura):** https://upderechoia.github.io/observatorio-de-licencias/
 
 ## Propósito académico
 
@@ -161,7 +161,7 @@ Si cualquier paso falla, la corrida queda en rojo.
 
 En cada push a `main`, el workflow `.github/workflows/deploy-pages.yml` genera un
 **export estático** del visor y lo publica en
-**https://upderecho.github.io/observatorio-de-licencias/**.
+**https://upderechoia.github.io/observatorio-de-licencias/**.
 
 - El export se construye con `bash scripts/build-static.sh`, que activa
   `output: 'export'` (vía `NEXT_PUBLIC_STATIC_EXPORT=true` en `next.config.mjs`)

@@ -6,7 +6,7 @@
 // la misma app server-rendered de siempre.
 const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
-// El sitio se sirve bajo https://upderecho.github.io/observatorio-de-licencias/
+// El sitio se sirve bajo https://upderechoia.github.io/observatorio-de-licencias/
 // por lo que necesita basePath. Fuente ÚNICA del basePath (no usar
 // configure-pages con static_site_generator: next, o se duplicaría).
 const basePath = isStaticExport ? "/observatorio-de-licencias" : "";

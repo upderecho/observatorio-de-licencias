@@ -8,7 +8,6 @@ import { providerTypeLabel } from "@/domain/taxonomies/providerTypes";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
 import { ProductLabelCard } from "./ProductLabelCard";
-import { ModeToggle } from "./ModeProvider";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
 
@@ -89,16 +88,25 @@ export function ProviderDossier({
         </dl>
       </header>
 
+      {/* Contexto editorial: va debajo de "Tipo de herramienta" y por ENCIMA de
+          los sellos; antecede al análisis; fundado en los documentos del corpus. */}
+      {context && (
+        <section className="max-w-3xl rounded border border-l-4 border-slate-200 border-l-gold-500 bg-white p-4">
+          <h2 className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Contexto</h2>
+          <p className="text-base leading-relaxed text-slate-700">{context}</p>
+          <p className="mt-2 text-xs italic text-slate-400">
+            Nota editorial sobre los documentos disponibles en el corpus. No es asesoramiento legal ni una conclusión
+            jurídica sobre el proveedor.
+          </p>
+        </section>
+      )}
+
       {/* Etiquetado frontal: resumen visual por producto × modalidad (octógonos,
-          cautelas y tabla nutricional). Es la entrada del expediente; el detalle
-          jurídico/fuentes queda debajo. */}
+          cautelas y tabla nutricional). El detalle jurídico/fuentes queda debajo. */}
       <section className="space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Etiquetado frontal</h2>
-            <p className="text-sm text-slate-500">Por producto y modalidad. Deriva del corpus y remite a evidencia textual. No es un ranking.</p>
-          </div>
-          <ModeToggle />
+        <div>
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Etiquetado frontal</h2>
+          <p className="text-sm text-slate-500">Por producto y modalidad. Deriva del corpus y remite a evidencia textual. No es un ranking.</p>
         </div>
         <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
           {products.map((productName) => (
@@ -112,18 +120,6 @@ export function ProviderDossier({
           ))}
         </div>
       </section>
-
-      {/* Contexto editorial: antecede al análisis jurídico; fundado en los documentos del corpus. */}
-      {context && (
-        <section className="max-w-3xl rounded border border-l-4 border-slate-200 border-l-gold-500 bg-white p-4">
-          <h2 className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Contexto</h2>
-          <p className="text-base leading-relaxed text-slate-700">{context}</p>
-          <p className="mt-2 text-xs italic text-slate-400">
-            Nota editorial sobre los documentos disponibles en el corpus. No es asesoramiento legal ni una conclusión
-            jurídica sobre el proveedor.
-          </p>
-        </section>
-      )}
 
       {/* General */}
       <ModeSection

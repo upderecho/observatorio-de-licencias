@@ -18,10 +18,9 @@
  *    `cautelasFor` y `nutritionLabel` filtran ANTES por modalidad aplicable.
  *
  * El parámetro `mode` de estas funciones es la MODALIDAD de contratación (filtro
- * anti-traslado). El registro claro/jurídico es una decisión de presentación de
- * los componentes (`useMode`), no de estas funciones puras: por eso cada fila
- * expone tanto el texto claro (`plainConcern`) como el jurídico (`legalConcern`,
- * `legalSummary`).
+ * anti-traslado). Cada fila expone el texto claro (`plainConcern`) y el jurídico
+ * (`legalConcern`, `legalSummary`); la UI elige cuál mostrar (hoy, lenguaje
+ * claro en la tabla, con la evidencia y el resumen jurídico a un clic).
  */
 
 import type { LicenseAnalysis, Evidence, CategoryFinding } from "@/lib/schema";

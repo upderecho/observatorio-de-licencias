@@ -5,14 +5,13 @@ import Link from "next/link";
 import type { RiskLevel } from "@/lib/types";
 import type { CategoryFinding } from "@/lib/schema";
 import { REVIEW_LABELS } from "@/lib/analysisMeta";
-import { useMode } from "./ModeProvider";
 import { EvidencePanel } from "./EvidencePanel";
 import type { NutritionLabelData, NutritionRow } from "@/domain/seals";
 
 /**
- * TABLA NUTRICIONAL del clausulado (capa 3), por producto × modalidad. Reusa el
- * registro claro/jurídico de `ModeProvider` (no inventa estado). El color solo
- * refuerza: el estado y el riesgo van en texto.
+ * TABLA NUTRICIONAL del clausulado (capa 3), por producto × modalidad. Muestra
+ * la lectura en lenguaje claro; la evidencia textual (citas) queda a un clic por
+ * fila. El color solo refuerza: el estado y el riesgo van en texto.
  */
 
 const STATUS_TEXT: Record<CategoryFinding["status"], string> = {
@@ -35,7 +34,6 @@ const RISK_DOT: Record<RiskLevel, string> = {
 
 export function NutritionLabel({ data }: { data: NutritionLabelData }) {
   const [open, setOpen] = useState(false);
-  const { mode } = useMode();
 
   return (
     <section className="rounded-md border border-slate-200 bg-white">
@@ -101,14 +99,12 @@ export function NutritionLabel({ data }: { data: NutritionLabelData }) {
                   <th scope="col" className="px-3 py-2 font-medium">Cláusula</th>
                   <th scope="col" className="px-3 py-2 font-medium">Estado</th>
                   <th scope="col" className="px-3 py-2 font-medium">Riesgo</th>
-                  <th scope="col" className="px-3 py-2 font-medium">
-                    {mode === "plain" ? "Lectura clara" : "Lectura jurídica"}
-                  </th>
+                  <th scope="col" className="px-3 py-2 font-medium">Lectura</th>
                 </tr>
               </thead>
               <tbody>
                 {data.rows.map((row) => (
-                  <RowView key={row.categoryKey} row={row} mode={mode} />
+                  <RowView key={row.categoryKey} row={row} />
                 ))}
               </tbody>
             </table>
@@ -128,13 +124,12 @@ function Datum({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function RowView({ row, mode }: { row: NutritionRow; mode: "plain" | "legal" }) {
+function RowView({ row }: { row: NutritionRow }) {
   const [open, setOpen] = useState(false);
   const hasEvidence = row.evidence.length > 0;
-  // En claro: explicación del catálogo. En jurídico: resumen del hallazgo si lo
-  // hay, si no la descripción técnico-jurídica del catálogo.
-  const reading =
-    mode === "plain" ? row.plainConcern : row.status === "found" && row.legalSummary ? row.legalSummary : row.legalConcern;
+  // Lectura en lenguaje claro (explicación del catálogo). La evidencia textual
+  // y el resumen jurídico del documento quedan a un clic ("evidencia").
+  const reading = row.plainConcern;
 
   return (
     <>

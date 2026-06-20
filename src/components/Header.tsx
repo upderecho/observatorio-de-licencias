@@ -11,11 +11,12 @@ export function Header() {
     <header className="border-b-2 border-gold-500 bg-slate-900 text-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-6 py-3 sm:flex-row sm:items-center sm:justify-between lg:px-10 xl:px-12">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-baseline gap-2">
-            <span className="font-serif text-xl font-bold tracking-tight text-white">UP-Law-AILO</span>
-            <span className="hidden text-xs text-slate-300 sm:inline">
-              Observatorio de licencias de IA
-            </span>
+          <Link href="/" className="flex items-baseline gap-2 font-serif tracking-tight">
+            <span className="text-base font-semibold text-slate-200">Universidad de Palermo</span>
+            <span className="text-slate-500" aria-hidden>|</span>
+            <span className="hidden text-base font-semibold text-slate-200 sm:inline">Facultad de Derecho</span>
+            <span className="hidden text-slate-500 sm:inline" aria-hidden>|</span>
+            <span className="text-xl font-bold text-white">E-Law</span>
           </Link>
         </div>
         <nav className="flex flex-wrap items-center gap-1 text-sm">

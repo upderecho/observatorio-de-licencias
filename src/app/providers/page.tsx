@@ -1,4 +1,5 @@
 import { loadAllLicenseAnalyses } from "@/lib/storage";
+import { latestAnalyses } from "@/domain/versions";
 import { providerSummaries, providerKey } from "@/lib/derive";
 import { loadRegistry } from "@/lib/sources";
 import { loadAllLegalBundles } from "@/lib/coverage";
@@ -19,7 +20,7 @@ interface RefProduct {
 }
 
 export default async function ProvidersPage() {
-  const analyses = await loadAllLicenseAnalyses();
+  const analyses = latestAnalyses(await loadAllLicenseAnalyses());
   const summaries = providerSummaries(analyses);
 
   // Mapa providerName -> route id del expediente (solo proveedores con análisis).

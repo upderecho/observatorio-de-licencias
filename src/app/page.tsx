@@ -8,6 +8,7 @@ import { isNonCommercialProject } from "@/domain/taxonomies/providerTypes";
 import { StateOfArtReading } from "@/components/StateOfArtReading";
 import { EscenariosGate } from "@/components/featureGates";
 import { providerSummaries } from "@/lib/derive";
+import { latestAnalyses } from "@/domain/versions";
 import { riskWord } from "@/components/indicators";
 import { MODE_LABELS } from "@/lib/contractingModes";
 import type { RiskLevel } from "@/lib/types";
@@ -30,7 +31,8 @@ const ACCESS_LINKS: { href: string; label: string; desc: string; gated?: boolean
 ];
 
 export default async function HomePage() {
-  const analyses = await loadAllLicenseAnalyses();
+  // Solo la captura más reciente de cada documento (la app muestra la actual).
+  const analyses = latestAnalyses(await loadAllLicenseAnalyses());
 
   // Resumen regional del registro para la nota del Estado del arte (no depende
   // del parser ni de los análisis; describe la composición del registro).

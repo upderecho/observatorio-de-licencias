@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
+import { latestAnalyses } from "@/domain/versions";
 import { MODE_LABELS } from "@/lib/contractingModes";
 import { SENSITIVITY_LABEL } from "@/domain/legalUseScenarios";
 import {
@@ -34,7 +35,7 @@ export default async function ScenarioReadingGuidePage({ params }: { params: Pro
   const guide = getReadingGuide(scenarioId);
   if (!guide) notFound();
 
-  const analyses = await loadAllLicenseAnalyses();
+  const analyses = latestAnalyses(await loadAllLicenseAnalyses());
   const documents = getDocumentsForReadingGuide(guide, analyses);
   const clauses = getClausesForReadingGuide(guide, analyses);
   const byPriority = PRIORITY_ORDER.map((p) => ({ priority: p, docs: documents.filter((d) => d.readingPriority === p) })).filter((g) => g.docs.length > 0);

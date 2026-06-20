@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
+import { latestAnalyses } from "@/domain/versions";
 import type { LicenseAnalysis } from "@/lib/schema";
 import { compareProviders } from "@/lib/derive";
 import { MODE_LABELS } from "@/lib/contractingModes";
@@ -46,7 +47,7 @@ function buildHierarchy(analyses: LicenseAnalysis[]) {
 }
 
 export default async function CorpusPage() {
-  const analyses = await loadAllLicenseAnalyses();
+  const analyses = latestAnalyses(await loadAllLicenseAnalyses());
   const hierarchy = buildHierarchy(analyses);
 
   return (

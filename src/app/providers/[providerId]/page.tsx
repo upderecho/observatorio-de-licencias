@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { loadRegistry, flattenDocuments } from "@/lib/sources";
 import { providerKey } from "@/lib/derive";
+import { latestAnalyses } from "@/domain/versions";
 import { getProviderContext } from "@/domain/providerContext";
 import { PageContainer } from "@/components/PageContainer";
 import { ProviderDossier, type PendingDoc, type ProviderTaxonomy } from "@/components/ProviderDossier";
@@ -16,7 +17,8 @@ export async function generateStaticParams() {
 export default async function ProviderPage({ params }: { params: Promise<{ providerId: string }> }) {
   const { providerId } = await params;
   const all = await loadAllLicenseAnalyses();
-  const analyses = all.filter((a) => providerKey(a) === providerId);
+  // Mostrar solo la captura más reciente de cada documento del proveedor.
+  const analyses = latestAnalyses(all).filter((a) => providerKey(a) === providerId);
   if (analyses.length === 0) notFound();
 
   // Documentos pendientes / no disponibles + taxonomía (región/tipo/nicho) del registro.

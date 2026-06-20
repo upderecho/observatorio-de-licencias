@@ -23,6 +23,7 @@
     "ingest:manual": "tsx scripts/ingest-manual.ts",
     "ingest:stealth": "tsx scripts/ingest-stealth.ts",
     "parse:all": "tsx scripts/parse-all.ts",
+    "check:drift": "tsx scripts/check-drift.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run",
     "test:watch": "vitest"

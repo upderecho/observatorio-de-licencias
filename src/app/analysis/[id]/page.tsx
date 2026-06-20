@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadLicenseAnalysis, loadAllLicenseAnalyses } from "@/lib/storage";
+import { versionsOf } from "@/domain/versions";
 import { loadRegistry } from "@/lib/sources";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { CATEGORIES } from "@/lib/categories";
@@ -41,6 +42,7 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
   const analysis = await loadLicenseAnalysis(id);
   if (!analysis) notFound();
 
+  const all = await loadAllLicenseAnalyses();
   const date = (analysis.metadata.retrievedAt ?? analysis.retrievedAt).slice(0, 10);
   const domain = host(analysis.sourceUrl);
 
@@ -57,6 +59,11 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
   const scenarios = getScenariosForDocument(analysis);
   const priorities = getDocumentReadingPriorities(analysis);
   const topClauses = priorities.slice(0, 5);
+  // Versiones del documento (misma clave proveedor+producto+tipo). La vigente es
+  // la más reciente; las demás quedan accesibles por su propia página.
+  const versions = versionsOf(all, analysis);
+  const otherVersions = versions.filter((v) => v.id !== analysis.id);
+
   // Cláusulas relevantes = categorías presentes (detectadas o ambiguas); el resto no se prioriza para lectura.
   const relevant = CATEGORIES.filter((cat) => {
     const st = analysis.categories[cat.key]?.status;
@@ -92,6 +99,28 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
       <p className="text-sm leading-relaxed text-slate-500">
         Lectura preliminar basada en documentos públicos y evidencia textual. No constituye asesoramiento legal.
       </p>
+
+      {/* Acceso discreto al histórico: solo aparece si hay más de una captura. */}
+      {otherVersions.length > 0 && (
+        <section className="rounded border border-slate-200 bg-white p-3 text-sm">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Otras versiones de este documento</h2>
+          <ul className="mt-2 space-y-1">
+            {otherVersions.map((v) => {
+              const vDate = (v.metadata.retrievedAt ?? v.retrievedAt).slice(0, 10);
+              const isCurrent = v.id === versions[0].id;
+              return (
+                <li key={v.id} className="text-slate-700">
+                  <Link href={`/analysis/${v.id}`} className="text-sky-700 hover:underline">{vDate}</Link>
+                  {isCurrent && <span className="ml-2 text-xs text-emerald-700">(vigente)</span>}
+                  {v.metadata.contentHash && (
+                    <span className="ml-2 text-xs text-slate-400">sha256:{v.metadata.contentHash.replace(/^sha256:/, "").slice(0, 10)}…</span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       {/* Qué leer en este documento (protagonista) */}
       <section className="rounded-lg border border-slate-200 bg-white p-5">

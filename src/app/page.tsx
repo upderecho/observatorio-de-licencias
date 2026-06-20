@@ -59,9 +59,8 @@ export default async function HomePage() {
 
   return (
     <PageContainer className="space-y-10">
-      {/* 1 · Título del proyecto · 2 · Bajada académica breve */}
-      <header className="max-w-3xl space-y-2">
-        <h1 className="font-serif text-3xl font-bold text-slate-900">UP-Law-AILO</h1>
+      {/* Bajada académica breve (el nombre del proyecto vive en el header) */}
+      <header className="max-w-3xl">
         <p className="text-base leading-relaxed text-slate-600">
           Observatorio jurídico-académico que lee y audita, con criterio jurídico y trazabilidad textual, las condiciones
           legales de herramientas de IA y de software cotidiano.

@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { EscenariosNavLink } from "@/components/featureGates";
+// Import estático: next/image resuelve dimensiones y el basePath de Pages.
+import upLogo from "../../public/up-logo.png";
 
 // En el sitio estático de GitHub Pages no hay servidor: la carga web (/upload)
 // no se incluye en ese build. La ingesta ahí es 100% local por CLI.
@@ -8,10 +11,11 @@ const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 /** Cabecera con navegación principal. */
 export function Header() {
   return (
-    <header className="border-b-2 border-gold-500 bg-slate-900 text-white">
+    <header className="border-b-2 border-gold-500 bg-black text-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-6 py-3 sm:flex-row sm:items-center sm:justify-between lg:px-10 xl:px-12">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-baseline gap-2 font-serif tracking-tight">
+          <Link href="/" className="flex items-center gap-3 font-serif tracking-tight">
+            <Image src={upLogo} alt="Universidad de Palermo" width={40} height={40} priority className="shrink-0" />
             <span className="text-base font-semibold text-slate-200">Universidad de Palermo</span>
             <span className="text-slate-500" aria-hidden>|</span>
             <span className="hidden text-base font-semibold text-slate-200 sm:inline">Facultad de Derecho</span>

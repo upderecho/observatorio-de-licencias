@@ -3,6 +3,7 @@ import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { LegalDisclaimer } from "@/components/Disclaimer";
+import { EntryNotice } from "@/components/EntryNotice";
 
 // Serif editorial para títulos/marca (gravitas jurídica); sans legible para UI densa.
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora", display: "swap" });
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${lora.variable} ${inter.variable}`}>
       <body className="min-h-screen">
+        <EntryNotice />
         <Header />
         {/* Ancho lo define cada página vía PageContainer (alineado con header/footer). */}
         <main className="py-6">{children}</main>

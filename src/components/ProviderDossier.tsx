@@ -8,6 +8,7 @@ import { providerTypeLabel } from "@/domain/taxonomies/providerTypes";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
 import { ProductGondolaCard } from "./ProductGondolaCard";
+import { ProviderLogo } from "./ProviderLogo";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
 
@@ -29,11 +30,13 @@ export function ProviderDossier({
   pending,
   context,
   taxonomy,
+  logoSrc,
 }: {
   analyses: LicenseAnalysis[];
   pending: PendingDoc[];
   context?: string | null;
   taxonomy?: ProviderTaxonomy | null;
+  logoSrc?: string;
 }) {
   const provider = analyses[0]?.providerName ?? "—";
   const providerId = analyses[0] ? providerKey(analyses[0]) : "";
@@ -49,7 +52,10 @@ export function ProviderDossier({
     <div className="space-y-6">
       <header>
         <Link href="/providers" className="text-sm text-sky-700 hover:underline">← Proveedores</Link>
-        <h1 className="mt-1 text-xl font-bold text-slate-900">{provider}</h1>
+        <div className="mt-1 flex items-center gap-2">
+          <ProviderLogo src={logoSrc} providerId={providerId} providerName={provider} size={28} />
+          <h1 className="text-xl font-bold text-slate-900">{provider}</h1>
+        </div>
         {taxonomy && (
           <p className="mt-1 text-sm text-slate-600">
             {providerRegionLabel(taxonomy.region)} · {providerTypeLabel(taxonomy.type)}
@@ -116,6 +122,7 @@ export function ProviderDossier({
               providerId={providerId}
               productName={productName}
               analyses={analyses.filter((a) => a.productName === productName)}
+              logoSrc={logoSrc}
               showProviderLink={false}
             />
           ))}

@@ -3,6 +3,7 @@ import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { loadRegistry, flattenDocuments } from "@/lib/sources";
 import { providerKey } from "@/lib/derive";
 import { latestAnalyses } from "@/domain/versions";
+import { availableProviderLogos, resolveLogoSrc } from "@/lib/providerLogos";
 import { getProviderContext } from "@/domain/providerContext";
 import { PageContainer } from "@/components/PageContainer";
 import { ProviderDossier, type PendingDoc, type ProviderTaxonomy } from "@/components/ProviderDossier";
@@ -24,6 +25,7 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
   // Documentos pendientes / no disponibles + taxonomía (región/tipo/nicho) del registro.
   let pending: PendingDoc[] = [];
   let taxonomy: ProviderTaxonomy | null = null;
+  let registryLogoPath: string | undefined;
   try {
     const reg = await loadRegistry();
     pending = flattenDocuments(reg, providerId)
@@ -35,6 +37,7 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
       }));
     const regProv = reg.providers.find((p) => p.providerName === analyses[0].providerName);
     if (regProv) {
+      registryLogoPath = regProv.logoPath;
       taxonomy = {
         region: regProv.providerRegion,
         type: regProv.providerType,
@@ -45,6 +48,8 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
     pending = [];
   }
 
+  const logoSrc = resolveLogoSrc(providerId, await availableProviderLogos(), registryLogoPath);
+
   return (
     <PageContainer>
       <ProviderDossier
@@ -52,6 +57,7 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
         pending={pending}
         context={getProviderContext(providerId)}
         taxonomy={taxonomy}
+        logoSrc={logoSrc}
       />
     </PageContainer>
   );

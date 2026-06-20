@@ -9,6 +9,8 @@ import { StateOfArtReading } from "@/components/StateOfArtReading";
 import { EscenariosGate } from "@/components/featureGates";
 import { providerSummaries } from "@/lib/derive";
 import { latestAnalyses } from "@/domain/versions";
+import { availableProviderLogos, resolveLogoSrc } from "@/lib/providerLogos";
+import { ProviderLogo } from "@/components/ProviderLogo";
 import { riskWord } from "@/components/indicators";
 import { MODE_LABELS } from "@/lib/contractingModes";
 import type { RiskLevel } from "@/lib/types";
@@ -56,6 +58,7 @@ export default async function HomePage() {
   // enlaza a su página, donde vive el etiquetado frontal. Orden de proveedores
   // desde la derivación pura (derive.ts).
   const providers = providerSummaries(analyses);
+  const logos = await availableProviderLogos();
 
   return (
     <PageContainer className="space-y-10">
@@ -93,7 +96,15 @@ export default async function HomePage() {
                 className="flex h-full flex-col justify-between gap-3 rounded-lg border border-slate-200 bg-white p-4 hover:bg-slate-50"
               >
                 <div>
-                  <h3 className="font-serif text-lg font-semibold text-slate-900">{p.providerName}</h3>
+                  <div className="flex items-center gap-2">
+                    <ProviderLogo
+                      src={resolveLogoSrc(p.providerId, logos)}
+                      providerId={p.providerId}
+                      providerName={p.providerName}
+                      size={32}
+                    />
+                    <h3 className="font-serif text-lg font-semibold text-slate-900">{p.providerName}</h3>
+                  </div>
                   <p className="mt-1 text-sm text-slate-500">
                     {p.products.length} producto{p.products.length !== 1 ? "s" : ""} · {p.docCount} documento
                     {p.docCount !== 1 ? "s" : ""}

@@ -17,6 +17,7 @@ import { SealBadge } from "./SealBadge";
 import { PrecautionaryLegend } from "./PrecautionaryLegend";
 import { NutritionLabel } from "./NutritionLabel";
 import { SealDetail } from "./SealDetail";
+import { ProviderLogo } from "./ProviderLogo";
 import { postureWord } from "./indicators";
 
 /**
@@ -42,11 +43,14 @@ export function ProductGondolaCard({
   providerId,
   productName,
   analyses,
+  logoSrc,
   showProviderLink = true,
 }: {
   providerId: string;
   productName: string;
   analyses: LicenseAnalysis[];
+  /** Logo del proveedor ya resuelto (con basePath); undefined → monograma. */
+  logoSrc?: string;
   /** Oculta el link "ver expediente" cuando ya estamos en la página del proveedor. */
   showProviderLink?: boolean;
 }) {
@@ -78,7 +82,10 @@ export function ProductGondolaCard({
     <article className="space-y-4 rounded-lg border border-slate-200 bg-white p-5">
       {/* 1 · Header */}
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <h3 className="font-serif text-lg font-semibold text-slate-900">{productName}</h3>
+        <div className="flex items-center gap-2">
+          <ProviderLogo src={logoSrc} providerId={providerId} providerName={analyses[0]?.providerName ?? providerId} size={24} />
+          <h3 className="font-serif text-lg font-semibold text-slate-900">{productName}</h3>
+        </div>
         <div className="flex items-center gap-3">
           <label htmlFor={selectId} className="text-xs text-slate-500">Modalidad</label>
           <select

@@ -53,6 +53,9 @@ export const ProviderSchema = z.object({
   // --- Taxonomía regional y de tipo de proveedor (autoridad del registro) ---
   providerRegion: ProviderRegionSchema.default("unknown"),
   providerType: ProviderTypeSchema.default("unknown"),
+  // Ruta opcional a un logo local (p. ej. "logos/openai.svg"); por defecto se usa
+  // la convención `logos/<providerId>.svg`. Opcional: no rompe datos previos.
+  logoPath: z.string().optional(),
   products: z.array(ProductSchema).default([]),
   metadata: z
     .object({

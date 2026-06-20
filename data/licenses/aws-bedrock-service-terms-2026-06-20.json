@@ -1,0 +1,657 @@
+{
+  "id": "aws-bedrock-service-terms-2026-06-20",
+  "providerName": "Amazon Web Services",
+  "productName": "AWS Bedrock",
+  "productTier": "All",
+  "documentType": "Service Terms",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
+  "contractingMode": "all",
+  "appliesToModes": [
+    "api",
+    "paid_individual",
+    "enterprise"
+  ],
+  "sourceScope": "mixed",
+  "modeConfidence": "medium",
+  "modeRationale": "El documento parece general pero contiene secciones que diferencian modalidades (free, paid_individual, business, enterprise). Las diferencias deben revisarse cláusula por cláusula.",
+  "sourceUrl": "https://aws.amazon.com/service-terms/",
+  "retrievedAt": "2026-06-20T02:54:15.278Z",
+  "rawTextPath": "data/extracted/aws-bedrock-service-terms-2026-06-20.txt",
+  "overall": {
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 18. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "overallRiskLevel": "high"
+  },
+  "privacy": {
+    "posture": "moderate",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: enterprise_dpa, retention_controls, deletion_control, confidentiality_commitment, broad_license.",
+    "signals": [
+      "enterprise_dpa",
+      "retention_controls",
+      "deletion_control",
+      "confidentiality_commitment",
+      "broad_license"
+    ],
+    "evidence": []
+  },
+  "categories": {
+    "privacy": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "You agree and instruct that for AWS Supply Chain: (a) we may use and store Your Content that is processed by the AWS Supply Chain service to develop and improve the service and its underlying technologies; (b) we may use and store Your Content that is not personal data to deve…",
+          "locationHint": "coincidencia dirigida: \"personal data\""
+        },
+        {
+          "quote": "You agree and instruct that: (i) we may use and store Amazon WorkSpaces AI Content to develop and improve Amazon WorkSpaces and its underlying technologies; (ii) we may use and store Amazon WorkSpaces AI Content that is not personal data to develop and improve AWS and affiliat…",
+          "locationHint": "coincidencia dirigida: \"personal data\""
+        },
+        {
+          "quote": "You agree and instruct that after you have enabled the new AWS Security Hub: (a) we may use and store your Security Hub Content to develop and improve AWS Security Hub and its underlying technologies; (b) we may use and store Security Hub Content that is not personal data to d…",
+          "locationHint": "coincidencia dirigida: \"personal data\""
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: personal data. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "provider",
+      "obligationTarget": "provider",
+      "clauseFunction": "privacy_policy"
+    },
+    "training_use": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto un uso por el proveedor vinculado a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes. Se hallaron además cláusulas que imponen una restricción al usuario (p. ej. prohibición de entrenar, scrapear o destilar, o de violar la privacidad de terceros); se reclasifican como uso prohibido y no constituyen un uso de datos por el proveedor.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "input_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… or other agreement with us governing your use of the Services (the “Agreement”). For purposes of these Service Terms, “Your Content” includes any “Company Content” and any “Customer Content,” and “AWS Content” includes “Amazon Properties.” 1.1. You …",
+          "locationHint": "coincidencia: \"your content\" (~offset 413)"
+        },
+        {
+          "quote": "… any successor or related locations designated by us). 1.3. You will provide information or other materials related to Your Content (including copies of any client-side applications) as reasonably requested by us to verify your compliance with the …",
+          "locationHint": "coincidencia: \"your content\" (~offset 1078)"
+        },
+        {
+          "quote": "… with us to identify the source of any problem with the Services that we reasonably believe may be attributable to Your Content or any end user materials that you control. 1.4. In connection with your use of the Services, you are responsible for …",
+          "locationHint": "coincidencia: \"your content\" (~offset 1362)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "output_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la asignación de titularidad sobre los outputs generados por el servicio. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… AWS Supply Chain. AWS Supply Chain uses machine learning models that generate predictions based on patterns in data. Output generated by a machine learning model is probabilistic and should be evaluated for accuracy as appropriate for your use case, …",
+          "locationHint": "coincidencia: \"output generated\" (~offset 90974)"
+        },
+        {
+          "quote": "… Services may incorporate generative AI features and provide Generative AI Output to you. “Generative AI Output” means output generated by a generative artificial intelligence model in response to inputs or other data provided by you. “Indemnified …",
+          "locationHint": "coincidencia: \"output generated\" (~offset 158093)"
+        },
+        {
+          "quote": "… defend you and your employees, officers, and directors against any third-party claim alleging that the Generative AI Output generated by an Indemnified Generative AI Service infringes or misappropriates that third party’s intellectual property rights, …",
+          "locationHint": "coincidencia: \"output generated\" (~offset 159312)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: output generated.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "license_grant": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a la licencia conferida al proveedor sobre los contenidos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… and the Works with Amazon Sidewalk Badge Guidelines , we hereby grant you a non-exclusive, royalty-free, and revocable license to use AWS Marks provided to you in connection with the WWAS qualification program (collectively, the “WWAS Marks”), to …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 123020)"
+        },
+        {
+          "quote": "… different terms, you grant each party who has access to the Third-Party Space a nonexclusive, worldwide, irrevocable license to use, reproduce, prepare derivatives, distribute, perform, and display Contributed Content. You represent and warrant that …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 265855)"
+        },
+        {
+          "quote": "… Content to Amazon ECR Public, you hereby grant AWS and its Affiliates a worldwide, non-exclusive, fully paid-up, royalty-free license to store, parse, copy, reproduce (including by making mechanical reproductions), reformat, transmit, display, …",
+          "locationHint": "coincidencia: \"royalty-free\" (~offset 242660)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: license to use, royalty-free.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "data_retention": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los plazos y condiciones de retención de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… an affiliate of AWS, but is otherwise subject to the terms of the Agreement. 53.13. You understand and agree that we store all user information (including chat messages, contacts, calendar, and meeting recordings) in the United States …",
+          "locationHint": "coincidencia: \"we store\" (~offset 186289)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: we store.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "data_deletion": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los mecanismos de supresión o eliminación de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… purpose of troubleshooting or improving Amazon WorkMail. 31.7. If your use of Amazon WorkMail is terminated, we may delete your data and your End Users’ mailboxes. 31.8. Portions of Amazon WorkMail in Japan are sold and provided by AMCS LLC, an …",
+          "locationHint": "coincidencia: \"delete your data\" (~offset 109312)"
+        },
+        {
+          "quote": "… Services to process Personal Information (as defined in the CCPA Terms). 1.15. Following closure of your AWS account, we will delete Your Content in accordance with the technical documentation applicable to the Services. 1.16. Your receipt and use of …",
+          "locationHint": "coincidencia: \"we will delete\" (~offset 8399)"
+        },
+        {
+          "quote": "… metrics to maintain, provide, develop, and improve the Services. 9.3. Once AWS Snow Family services are complete, we will delete data from the Appliances. 9.4. You are responsible for payment of all customs, duties, taxes, and other charges in …",
+          "locationHint": "coincidencia: \"we will delete\" (~offset 49050)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: delete your data, we will delete.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "confidentiality": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las obligaciones de confidencialidad aplicables al proveedor. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… any Maintenance requirements that we notify you about. 1.7. If your Agreement does not include a provision on AWS Confidential Information, and you and AWS do not have an effective non-disclosure agreement in place, then you agree that you will not disclose …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 3434)"
+        },
+        {
+          "quote": "… you and AWS do not have an effective non-disclosure agreement in place, then you agree that you will not disclose AWS Confidential Information (as defined in the AWS Customer Agreement), except as required by law. 1.8. You may perform benchmarks or comparative …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 3582)"
+        },
+        {
+          "quote": "… other information about or involving (including the existence of) any Beta Service or Beta Region are considered AWS Confidential Information. 2.6. WITHOUT LIMITING ANY DISCLAIMERS IN THE AGREEMENT OR THE SERVICE TERMS, BETA SERVICES AND BETA REGIONS ARE NOT …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 18479)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: confidential information.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "security": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las medidas técnicas y organizativas de seguridad declaradas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Appliance to the carrier for return to us at our request. 9.6. YOU ARE SOLELY RESPONSIBLE FOR APPLYING APPROPRIATE SECURITY MEASURES TO YOUR DATA AND YOUR USE OF APPLIANCES , INCLUDING ENCRYPTING SENSITIVE DATA AND NOT ALLOWING UNAUTHORIZED ACCESS TO …",
+          "locationHint": "coincidencia: \"security measures\" (~offset 49887)"
+        },
+        {
+          "quote": "… or improve a similar or competing product or service. 21.3. You are solely responsible for applying appropriate security measures to your space assets and the data transmitted to and from your space assets, including using encryption, firewalls, and …",
+          "locationHint": "coincidencia: \"security measures\" (~offset 82434)"
+        },
+        {
+          "quote": "… AWS is not responsible for modifying, configuring, or applying additional protections, encryption settings, or other security measures or controls to such Content. 45.19. You are responsible for creating and maintaining backup copies of all your systems …",
+          "locationHint": "coincidencia: \"security measures\" (~offset 142219)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: security measures.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "security_duty": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "warranties": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a las garantías otorgadas y los disclaimers de garantía. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… TO THE CONTRARY IN THE AGREEMENT OR THESE SERVICES TERMS, AWS IS PROVIDING BETA SERVICES AND BETA REGIONS TO YOU “AS IS.” AWS AND ITS AFFILIATES AND LICENSORS MAKE NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, …",
+          "locationHint": "coincidencia: \"as is\" (~offset 18877)"
+        },
+        {
+          "quote": "… EULA do not apply and the Product, Documentation, and Technology (all as defined in the Progress EULA) are provided “as is,” with all faults, and Progress Software Corporation disclaims all warranties, express or implied, including, but not …",
+          "locationHint": "coincidencia: \"as is\" (~offset 89949)"
+        },
+        {
+          "quote": "… Security Assurance Services are provided by AWS Security Assurance Services LLC (“SAS”) or certain of its affiliates. SAS is an affiliate of AWS. AWS Security Assurances Services are “Services” for the purposes of the Agreement. 65.2. SAS or …",
+          "locationHint": "coincidencia: \"as is\" (~offset 214516)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: as is.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "liability_limitation": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el régimen de exclusión o limitación de responsabilidad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… procure AWS Managed Services on your behalf and with respect to such AWS accounts. 83.3. AWS and its affiliates will not be liable to you for any damages arising from (a) AWS’s actions taken pursuant to any instructions or requests that you provide …",
+          "locationHint": "coincidencia: \"not be liable\" (~offset 254986)"
+        },
+        {
+          "quote": "… Incident Response services on your behalf and with respect to such AWS accounts. 104.2. AWS and its affiliates will not be liable to you for any damages arising from (a) AWS’s actions taken pursuant to any instructions, requests, or …",
+          "locationHint": "coincidencia: \"not be liable\" (~offset 283320)"
+        },
+        {
+          "quote": "… AND ANY WARRANTIES ARISING OUT OF ANY COURSE OF DEALING OR USAGE OF TRADE. AWS’S AND ITS AFFILIATES’ AND LICENSORS’ AGGREGATE LIABILITY FOR ANY BETA SERVICES AND BETA REGIONS WILL BE LIMITED TO THE AMOUNT YOU ACTUALLY PAY US UNDER THIS AGREEMENT FOR THE …",
+          "locationHint": "coincidencia: \"aggregate liability\" (~offset 19681)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: not be liable, aggregate liability.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "indemnity": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a las obligaciones de indemnidad a cargo del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… for Chef (the “Progress EULA”) except that sections 1.9.2. (Product Compliance with Documentation) and 1.10.1. (Our Indemnification Obligation) of the Progress EULA do not apply and the Product, Documentation, and Technology (all as defined in the …",
+          "locationHint": "coincidencia: \"indemnification\" (~offset 89788)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: indemnification.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "governing_law": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… in connection with illegal content, where the content may disrupt or threaten the Services or in accordance with applicable law or any judicial, regulatory or other governmental order or request. In the event that we remove Your Content without …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 2466)"
+        },
+        {
+          "quote": "… AWS electronically, in a format and method of delivery as determined by AWS, e.g., in a PDF format, as permitted under applicable law. If, as of the time of a change of the AWS Contracting Party responsible for your account, you have made an up-front …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 4973)"
+        },
+        {
+          "quote": "… privacy notices and obtained all necessary consents. You are responsible for processing such data in accordance with applicable law. 1.12. If you have been charged for a Service for a period when that Service was unavailable (as defined in the …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 6021)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: applicable law.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "jurisdiction": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la jurisdicción y el foro competente. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… for any damages, whether direct, indirect, incidental, special, punitive or consequential, and any loss of profits, revenue, data or data use, arising from use of Red Hat, Inc. software. • Your use of SUSE LLC’s software is subject to the …",
+          "locationHint": "coincidencia: \"venue\" (~offset 29318)"
+        },
+        {
+          "quote": "… for any damages, whether direct, indirect, incidental, special, punitive or consequential, and any loss of profits, revenue, data or data use, arising from your use of the Oracle Software. • Notwithstanding anything to the contrary elsewhere …",
+          "locationHint": "coincidencia: \"venue\" (~offset 59507)"
+        },
+        {
+          "quote": "… 1 January 2022) Amazon Web Services EMEA SARL 352 2789 0057 38 Avenue John F. Kennedy, L-1855, Luxembourg India (for transactions between buyers and third party providers incorporated in …",
+          "locationHint": "coincidencia: \"venue\" (~offset 78573)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: venue.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "arbitration": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el sometimiento a arbitraje y la renuncia a acciones colectivas. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "unilateral_changes": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las facultades de modificación unilateral de los términos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… service providers, we may in some cases be unable to transfer a customer’s telephone number. 54.1.5. We reserve the right to change or reclaim telephone numbers assigned by the applicable AMCS entity (not including numbers that the customer has ported …",
+          "locationHint": "coincidencia: \"we reserve the right to change\" (~offset 188986)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: we reserve the right to change.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "plan_differences": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Equipment may be equipped with tamper monitoring. 4.6. AWS Support Options. You will remain enrolled in either Enterprise On-Ramp Support or Enterprise Support during the entire period of your use of AWS Outposts. 4.7. …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 23435)"
+        },
+        {
+          "quote": "… increases the license fees it charges for Windows, or if Red Hat increases the license fees it charges for Red Hat Enterprise Linux (“RHEL”), we may make a corresponding increase to the per-hour usage rate (or institute a corresponding per-hour …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 31695)"
+        },
+        {
+          "quote": "… or Web services. It may not be used to support line of business applications (e.g., Customer Relationship Management, Enterprise Resource Management, and other similar applications). • Microsoft is an intended third-party beneficiary of this …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 61418)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: enterprise.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "minors": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento del uso del servicio por menores de edad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Lex in connection with websites, programs or other applications that are directed or targeted, in whole or in part, to children under age 13 and subject to COPPA or similar laws you must: (a) provide all required notices and obtain all required …",
+          "locationHint": "coincidencia: \"children under\" (~offset 152323)"
+        },
+        {
+          "quote": "… applications that you identify in accordance with this Section as being directed or targeted, in whole or in part, to children under age 13 and subject to COPPA or similar laws. 50.5. Except where permitted by the AI Service, you may not use an AI …",
+          "locationHint": "coincidencia: \"children under\" (~offset 152999)"
+        },
+        {
+          "quote": "… school or a higher education institution, and at least 16 years old, to use AWS DeepRacer Student. If you are under 18 years of age, or the age of majority in your location, you may use AWS DeepRacer Student only with involvement of a parent or …",
+          "locationHint": "coincidencia: \"18 years\" (~offset 258022)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: children under, 18 years.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "prohibited_content": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… or otherwise violates a material term of the Agreement (including the Service Terms, or the Acceptable Use Policy) (“Prohibited Content”), we will notify you of the Prohibited Content and may request that such content be removed from the Services …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 1814)"
+        },
+        {
+          "quote": "… such content be removed from the Services or access to it be disabled. If you do not remove or disable access to the Prohibited Content within 2 business days of our notice, we may remove or disable access to the Prohibited Content or suspend the …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 2019)"
+        },
+        {
+          "quote": "… to the Prohibited Content or suspend the Services to the extent we are not able to remove or disable access to the Prohibited Content. Notwithstanding the foregoing, we may remove or disable access to any Prohibited Content without prior notice …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 2223)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited. Incluye cláusulas que imponen restricciones al usuario (p. ej. prohibición de entrenar, scrapear o destilar modelos, o de violar la privacidad de terceros), reclasificadas desde categorías de privacidad/entrenamiento por su dirección jurídica (obligación a cargo del usuario).",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "user",
+      "obligationTarget": "user",
+      "clauseFunction": "prohibited_use"
+    },
+    "commercial_use": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a la habilitación o restricción del uso comercial del servicio resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… ANY DISCLAIMERS IN THE AGREEMENT OR THE SERVICE TERMS, BETA SERVICES AND BETA REGIONS ARE NOT READY FOR GENERAL COMMERCIAL RELEASE AND MAY CONTAIN BUGS, ERRORS, DEFECTS, OR HARMFUL COMPONENTS. ACCORDINGLY, AND NOTWITHSTANDING ANYTHING TO THE …",
+          "locationHint": "coincidencia: \"commercial\" (~offset 18640)"
+        },
+        {
+          "quote": "… third parties, any inquiries we consider necessary to validate information that you provide to us, including checking commercial and governmental databases. While we may take steps to verify the identity of our Customers, we cannot and do not …",
+          "locationHint": "coincidencia: \"commercial\" (~offset 73230)"
+        },
+        {
+          "quote": "… credit, debit or stored value payment services); • sweepstakes or contests; or • advertisements or promotions for commercial products, goods, or services. 29.11. To enable WhatsApp messaging integration with AWS End User Messaging, you must …",
+          "locationHint": "coincidencia: \"commercial\" (~offset 104408)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: commercial.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    },
+    "api_references": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a las condiciones aplicables al uso de APIs. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Universal Service Terms (Applicable to All Services) The Service Terms below govern your use of the Services. Capitalized terms used in these Service Terms but not defined below are defined in the AWS Customer Agreement or other …",
+          "locationHint": "coincidencia: \"api\" (~offset 185)"
+        },
+        {
+          "quote": "… that you own all right, title, and interest in, or have all necessary authority to permit use of, the Ephemeris API and any space assets associated with your AWS account, and you agree to provide to AWS, upon request, documentation …",
+          "locationHint": "coincidencia: \"api\" (~offset 82813)"
+        },
+        {
+          "quote": "… all features in your Organization. 48.4 . When a Management Account uses AWS Organizations or the CreateLinkedAccount API to create an account (“Created Account”): (i) the Created Account will be a Member Account of the Management Account’s …",
+          "locationHint": "coincidencia: \"api\" (~offset 146028)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: api.",
+      "appliesToModes": [
+        "api",
+        "paid_individual",
+        "enterprise"
+      ],
+      "modeSpecificity": "general",
+      "modeEvidence": [],
+      "actor": "unclear",
+      "obligationTarget": "unclear",
+      "clauseFunction": "unclear"
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-06-20T02:54:16.196Z",
+    "parserVersion": "0.3.0",
+    "isMock": false,
+    "reviewStatus": "unreviewed",
+    "retrievedAt": "2026-06-20T02:54:15.278Z",
+    "fetcherVersion": "0.1.0",
+    "contentHash": "sha256:37bba8c7915a2e2e75f6becd1d0196ffe5a4003ef1d6ea398412fe31f94c0b8c",
+    "sourceVerified": true,
+    "sourceStatus": "verified",
+    "extractionMethod": "html-to-text",
+    "canonicalUrl": "https://aws.amazon.com/service-terms/",
+    "finalUrl": "https://aws.amazon.com/service-terms/",
+    "fetchedPath": "data/fetched/aws-bedrock-service-terms-2026-06-20.html",
+    "extractedTextPath": "data/extracted/aws-bedrock-service-terms-2026-06-20.txt",
+    "extractedChars": 293565,
+    "productId": "bedrock",
+    "documentId": "service-terms"
+  }
+}

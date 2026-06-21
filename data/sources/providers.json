@@ -88,8 +88,8 @@
       "providerRegion": "north_america",
       "providerType": "commercial_provider",
       "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:OpenAI_Logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/OpenAI_Logo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ChatGPT-Logo.svg",
+        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ChatGPT-Logo.svg",
         "officialHosts": [
           "upload.wikimedia.org"
         ],
@@ -202,8 +202,8 @@
       "providerRegion": "north_america",
       "providerType": "commercial_provider",
       "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthropic_logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_AI_symbol.svg",
+        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_AI_symbol.svg",
         "officialHosts": [
           "upload.wikimedia.org"
         ],
@@ -370,8 +370,8 @@
       "providerRegion": "north_america",
       "providerType": "commercial_provider",
       "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Google_2015_logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Google_2015_logo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Google_%22G%22_logo.svg",
+        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Google_%22G%22_logo.svg",
         "officialHosts": [
           "upload.wikimedia.org"
         ],
@@ -487,8 +487,8 @@
       "providerRegion": "north_america",
       "providerType": "commercial_provider",
       "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Microsoft_logo_(2012).svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_logo_(2012).svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Microsoft_icon.svg",
+        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_icon.svg",
         "officialHosts": [
           "upload.wikimedia.org"
         ],
@@ -558,8 +558,8 @@
       "providerRegion": "north_america",
       "providerType": "open_source_project",
       "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meta_Platforms_Inc._logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_Platforms_Inc._logo.svg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meta_Platforms_Inc._logo_(cropped).svg",
+        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_Platforms_Inc._logo_(cropped).svg",
         "officialHosts": [
           "upload.wikimedia.org"
         ],
@@ -778,16 +778,7 @@
         "notes": ""
       },
       "providerRegion": "north_america",
-      "providerType": "commercial_provider",
-      "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perplexity_AI_logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Perplexity_AI_logo.svg",
-        "officialHosts": [
-          "upload.wikimedia.org"
-        ],
-        "attribution": "Logo de Perplexity, marca de su titular (vía Wikimedia Commons)",
-        "license": "Marca registrada; uso nominativo. Archivo vía Wikimedia Commons — ver licencia en la página del archivo."
-      }
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "cohere",
@@ -924,16 +915,7 @@
         "notes": ""
       },
       "providerRegion": "europe",
-      "providerType": "commercial_provider",
-      "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stability_Ai_%E2%80%94_wordmark.png",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stability_Ai_%E2%80%94_wordmark.png",
-        "officialHosts": [
-          "upload.wikimedia.org"
-        ],
-        "attribution": "Logo de Stability AI, marca de su titular (vía Wikimedia Commons)",
-        "license": "Marca registrada; uso nominativo. Archivo vía Wikimedia Commons — ver licencia en la página del archivo."
-      }
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "midjourney",
@@ -1149,16 +1131,7 @@
         "notes": ""
       },
       "providerRegion": "north_america",
-      "providerType": "commercial_provider",
-      "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ElevenLabs_Logo_03.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ElevenLabs_Logo_03.svg",
-        "officialHosts": [
-          "upload.wikimedia.org"
-        ],
-        "attribution": "Logo de ElevenLabs, marca de su titular (vía Wikimedia Commons)",
-        "license": "Marca registrada; uso nominativo. Archivo vía Wikimedia Commons — ver licencia en la página del archivo."
-      }
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "huggingface",
@@ -1223,16 +1196,7 @@
         "notes": ""
       },
       "providerRegion": "north_america",
-      "providerType": "commercial_provider",
-      "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hf-logo-with-title.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hf-logo-with-title.svg",
-        "officialHosts": [
-          "upload.wikimedia.org"
-        ],
-        "attribution": "Logo de Hugging Face, marca de su titular (vía Wikimedia Commons)",
-        "license": "Marca registrada; uso nominativo. Archivo vía Wikimedia Commons — ver licencia en la página del archivo."
-      }
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "aws",
@@ -1389,16 +1353,7 @@
         "notes": ""
       },
       "providerRegion": "north_america",
-      "providerType": "commercial_provider",
-      "logo": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:IBM_logo.svg",
-        "downloadUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/IBM_logo.svg",
-        "officialHosts": [
-          "upload.wikimedia.org"
-        ],
-        "attribution": "Logo de IBM, marca de su titular (vía Wikimedia Commons)",
-        "license": "Marca registrada; uso nominativo. Archivo vía Wikimedia Commons — ver licencia en la página del archivo."
-      }
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "adobe",

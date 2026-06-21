@@ -9,6 +9,7 @@ import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
 import { ProductGondolaCard } from "./ProductGondolaCard";
 import { ProviderLogo } from "./ProviderLogo";
+import { ShareButtons } from "./ShareButtons";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
 
@@ -92,6 +93,9 @@ export function ProviderDossier({
             </dd>
           </div>
         </dl>
+        <div className="mt-3">
+          <ShareButtons title={`${provider} — condiciones legales | E-Law`} />
+        </div>
       </header>
 
       {/* Contexto editorial: va debajo de "Tipo de herramienta" y por ENCIMA de

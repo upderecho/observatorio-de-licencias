@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadLicenseAnalysis, loadAllLicenseAnalyses } from "@/lib/storage";
 import { versionsOf } from "@/domain/versions";
+import { ShareButtons } from "@/components/ShareButtons";
 import { loadRegistry } from "@/lib/sources";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { CATEGORIES } from "@/lib/categories";
@@ -99,6 +100,8 @@ export default async function DossierPage({ params }: { params: Promise<{ id: st
       <p className="text-sm leading-relaxed text-slate-500">
         Lectura preliminar basada en documentos públicos y evidencia textual. No constituye asesoramiento legal.
       </p>
+
+      <ShareButtons title={`${analysis.providerName} · ${analysis.productName} — ${analysis.documentType} | E-Law`} />
 
       {/* Acceso discreto al histórico: solo aparece si hay más de una captura. */}
       {otherVersions.length > 0 && (
